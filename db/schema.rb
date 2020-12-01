@@ -10,24 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_182544) do
+ActiveRecord::Schema.define(version: 2020_11_30_193316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "allergies", force: :cascade do |t|
+    t.string "reactions"
+    t.string "medicine_name"
+    t.bigint "user_id", null: false
+    t.bigint "substance_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "reaction"
+    t.index ["substance_id"], name: "index_allergies_on_substance_id"
+    t.index ["user_id"], name: "index_allergies_on_user_id"
+  end
+
+  create_table "compound_mixes", force: :cascade do |t|
+    t.bigint "medicine_id", null: false
+    t.bigint "substance_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["medicine_id"], name: "index_compound_mixes_on_medicine_id"
+    t.index ["substance_id"], name: "index_compound_mixes_on_substance_id"
   end
 
   create_table "medicines", force: :cascade do |t|
+    t.string "name"
+    t.string "principle"
+    t.string "laboratory"
+    t.string "medicine_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "substances", force: :cascade do |t|
     t.string "name"
-    t.string "principleingredient"
-    t.string "laboratory"
-    t.string "medicinecode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +68,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_182544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "allergies", "substances"
+  add_foreign_key "allergies", "users"
+  add_foreign_key "compound_mixes", "medicines"
+  add_foreign_key "compound_mixes", "substances"
 end
