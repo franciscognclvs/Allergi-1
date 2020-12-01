@@ -4,10 +4,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :photo, as: :file %>
     <%= f.input :name%>
     <%= f.input :phone%>
     <%= f.input :cpf%>
-    <%= f.input :birthdate%>
+    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year] %>
     <%= f.input :weight%>
     <%= f.input :address%>
     <%= f.input :email,
