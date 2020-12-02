@@ -1,0 +1,10 @@
+<ul>
+	<% @remedios.each do |remedio| %>
+		<img src="https://<%= remedio[:photo] %>" alt="" style="height: 150px;">
+		<li><%= remedio[:title] %></li>
+		<span><%= remedio[:laboratory] %></span>
+		<span><%= remedio[:substance] %></span>
+	<% end %>
+	
+</ul>
+
