@@ -15,7 +15,6 @@ body {
 }
 
 .banner h1 {
-  margin: 0;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 38px;
@@ -33,8 +32,9 @@ body {
     opacity: 0.8;
     border-radius: 10px;
     width: fit-content;
-    padding: 5px;
+    padding: 20px;
     align-content: center;  
+    margin-top: 200px;
 }
 .btn {
   border-radius: 5px;
