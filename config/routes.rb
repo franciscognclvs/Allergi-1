@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'allergies/destroy'
   get 'compound_mixes/create'
   get 'medicines/index'
+  get 'medicines/emergency'
   get 'medicines/show'
   get 'medicines/create'
   get 'medicines/destroy'
