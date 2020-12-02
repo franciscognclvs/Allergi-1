@@ -1,10 +1,15 @@
-<ul>
+
+<div class="container justify-content-center">
 	<% @remedios.each do |remedio| %>
-		<img src="https://<%= remedio[:photo] %>" alt="" style="height: 150px;">
-		<li><%= remedio[:title] %></li>
-		<span><%= remedio[:laboratory] %></span>
-		<span><%= remedio[:substance] %></span>
+		<div class="cards d-inline-flex">
+			<div class="card">
+			  <img class="card-img-top" src="https://<%= remedio[:photo] %>" alt="<%= remedio[:title] %>">
+			    <p class="card-title"><strong>Substance:</strong> <%= remedio[:substance] %></p>
+			    <h5 class="card-text"><strong>Name:</strong> <%= remedio[:title] %></h5>
+			    <p class="card-text"><strong>Laboratory:</strong> <%= remedio[:laboratory] %></p>
+			    <a href="#" class="btn btn-outline-warning">Tenho Reação!</a>
+			</div>
+		</div>
 	<% end %>
-	
-</ul>
+</div>
 
