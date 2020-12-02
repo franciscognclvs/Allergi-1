@@ -1,3 +1,4 @@
+const algoliasearch = require("algoliasearch");
 var client = algoliasearch(ENV['ALGOLIA_APPLICATION_ID'], ENV['ALGOLIA_SEARCH_ONLY_API_KEY']);
 var index = client.initIndex('medicine');
 const input = document.getElementById("search")

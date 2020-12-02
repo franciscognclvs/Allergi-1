@@ -8,7 +8,7 @@ class AllergiesController < ApplicationController
   end
 
   def new
-   # @allergy = Allergy.new
+    @allergy = Allergy.new
   end
 
   def create
