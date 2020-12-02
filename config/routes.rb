@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'medicines/show'
   get 'medicines/create'
   get 'medicines/destroy'
+  get 'medicines/search_medicine'
   get 'substances/index'
   get 'substances/show'
   get 'substances/create'

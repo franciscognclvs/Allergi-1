@@ -8,4 +8,10 @@
 	 
 	  </div>
 	</div>
+
+	<%= form_tag("medicines/search_medicine", method: "get") do %>
+  		<%= label_tag(:remedio, "Procure pelo Remédio:") %>
+  		<%= text_field_tag(:remedio) %>
+  		<%= submit_tag("Search") %>
+	<% end %>
 </div>
