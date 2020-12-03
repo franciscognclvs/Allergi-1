@@ -7,7 +7,7 @@ class Medicine < ApplicationRecord
 
   def self.consulta_remedio(params)
   	busca_remedio = "https://consultaremedios.com.br/b/#{params}"
-	body = Nokogiri::HTML(open(busca_remedio).read)
+	  body = Nokogiri::HTML(open(busca_remedio).read)
   	return body
   end
 end

@@ -1,0 +1,49 @@
+
+img {
+  width: 400px;
+
+}
+.container-1 {
+  background-color: red;
+  text-align: center;
+}
+.buttons {
+  margin-bottom: -50px;
+  padding-bottom: 30px;
+  
+}
+.btn {
+  margin: 10px;
+}
+.img_alert {
+  animation: img_alert 0.7s infinite;
+  margin: 0 auto;
+  display: table;
+  margin-top: 50px;
+  animation-direction: alternate;
+  -webkit-animation-name: img_alert;
+  animation-name: img_alert;
+}
+@-webkit-keyframes img_alert {
+  0% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    -webkit-filter: brightness(200%);
+  }
+}
+
+@keyframes img_alert {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: brightness(200%);
+  }
+}
+
+
