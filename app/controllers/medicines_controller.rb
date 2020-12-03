@@ -1,5 +1,11 @@
 class MedicinesController < ApplicationController
+
   def index
+    if params[:query].present?
+      @medicines = Medicine.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @medicines = Medicine.all
+    end
   end
 
   def show

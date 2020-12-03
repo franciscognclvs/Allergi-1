@@ -1,7 +1,7 @@
 CompoundMix.destroy_all
 Medicine.destroy_all
 Substance.destroy_all
-
+require 'pry'
 text = "Colecalciferol (Vitamina D) ( 163 )
 Paracetamol ( 88 )
 Dipirona Monoidratada ( 72 )
@@ -113,16 +113,15 @@ def call_site(substance)
   open(url).read
 end
 
-
 substances.each do |substance| 
-	response = call_site(substances.first)
+	response = call_site(substance)
 	html_doc = Nokogiri::HTML(response)
 	puts "criando substancia #{substance} "
 	s = Substance.create!(
 			name: substance
 		)
-	html_doc.search('.result-item').each do |item|
-		name = item.search(".result-item__product-name").text.strip
+	html_doc.search('.result-item').first(10).each do |item|
+		name = item.search(".result-item__product-name").first.text.strip
 		m = Medicine.find_by(name: name)
 		unless m.present?
 			puts "criando medicine #{name}"
