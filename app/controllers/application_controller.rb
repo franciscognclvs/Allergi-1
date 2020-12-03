@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :configure_permitted_parameters_for_doctors, if: :devise_controller?
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:photo, :name, :phone, :cpf, :birthdate, :weight, :address])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[photo name phone cpf birthdate weight address])
+  end
+
+  def configure_permitted_parameters_for_doctors
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[photo name phone crm emergency_phone address])
   end
 end
