@@ -1,9 +1,10 @@
 class MedicinesController < ApplicationController
+ 	skip_before_action :authenticate_user!
   def index
   end
 
   def show
-  	@medicine = Medicine.new
+    @medicine = Medicine.new
   end
 
   def create
