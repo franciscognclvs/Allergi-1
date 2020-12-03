@@ -49,11 +49,14 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login as a user", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Login as a doctor", new_doctor_session_path, class: "nav-link" %>
+        <li class="nav-item dropdown">
+          <button class="btn dropdown-toggle" id="navbarDropdown" data-toggle="dropdown", aria-haspopup="true" aria-expanded="false">
+          Login
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Login as a user", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Login as a doctor", new_doctor_session_path, class: "dropdown-item" %>
+          </div>
         </li>
       <% end %>
     </ul>
