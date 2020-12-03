@@ -1,31 +1,13 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
-      <div style="padding-bottom: 40px;">
-        <div class="clear">
-          <h1 class="medicine-name"> <strong><%= @medicine.name %></strong> </h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-8 animal-photo">
-              <%= image_tag "", height: 300, gravity: :auto, crop: :fill %>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="organizer">
-                    <div class="card-body">
-                      
-                      <div class="clear-box" style="padding: 20px; margin-bottom: 20px;">
-                        <p><strong>DADOS GERAIS</strong></p>
-                        <ul class="medicine-check">
-                          <p class="fas fa-tablets"> <i>Name:</i><i><%= @medicine.name %></i></p>
-                          <p class="fas fa-atom-alt"> <i>Principle Ingredient:</i><i><%= @medicine.principle %></i></p>
-                          <p class="fas fa-atom-alt"> <i>Laboratory:</i><i><%= @medicine.laboratory %></i></p>
-                        </ul>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>   
+  <%= form_tag medicines_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a medicine"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
+
+
 
