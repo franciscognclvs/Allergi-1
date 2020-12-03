@@ -1,7 +1,7 @@
 CompoundMix.destroy_all
 Medicine.destroy_all
 Substance.destroy_all
-require 'pry'
+
 text = "Colecalciferol (Vitamina D) ( 163 )
 Paracetamol ( 88 )
 Dipirona Monoidratada ( 72 )
