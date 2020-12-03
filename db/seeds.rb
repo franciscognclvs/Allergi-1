@@ -1,12 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-require 'pry'
+CompoundMix.destroy_all
+Medicine.destroy_all
+Substance.destroy_all
 
 text = "Colecalciferol (Vitamina D) ( 163 )
 Paracetamol ( 88 )
@@ -123,31 +117,30 @@ end
 substances.each do |substance| 
 	response = call_site(substances.first)
 	html_doc = Nokogiri::HTML(response)
+	puts "criando substancia #{substance} "
 	s = Substance.create!(
 			name: substance
 		)
 	html_doc.search('.result-item').each do |item|
 		name = item.search(".result-item__product-name").text.strip
 		m = Medicine.find_by(name: name)
-		if m.present?
+		unless m.present?
+			puts "criando medicine #{name}"
 			m = Medicine.create!(
 				name: name,
-				laboratory: item.search(".result-item__meta-info-text").text.strip
+				principle: item.search(".result-item__meta-info-text").first.text.strip,
+				laboratory: item.search(".result-item__meta-info-wrapper .result-item__meta-info-text").last.text.strip
 			)
+			url = "https://" + item.search('img').last.values[3].split("//")[2]
+			puts "salvando imagem #{url}"
+			file = URI.open(url)
+			m.photo.attach(io: file, filename: "#{m.id}.jpg", content_type: 'image/png')
 		end
-		c = CompoundMix.create!(
-			substance: s,
-			medicine: m
-		)
+		c = CompoundMix.find_by(substance: s, medicine: m)
+		CompoundMix.create!(
+				substance: s,
+				medicine: m
+			) unless c.present?
 		puts "#{s.name} #{m.name} created on db"
 	end
 end
-
-puts "opi"
-
-
-
-
-
-
-
