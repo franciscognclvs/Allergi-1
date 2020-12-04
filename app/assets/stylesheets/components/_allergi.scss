@@ -1,13 +1,23 @@
 .allergi {
-	text-align: center;
+  text-align: center;
+  background-color:#bebebe;
+  border-radius: 20px;
 };
 
-.card{
-  background-color: #aeaeae;
-  border: #aeaeae;
+.perfil {
+  img{
+  width: 100px;
+  }
+}
+
+.card-login{
+  background-color: #bebebe;
+  border: #bebebe;
+  border-radius: 20px;
 };
 
 img{
   width: 250px;
   border-radius: 100vh;
-}
+};
+
