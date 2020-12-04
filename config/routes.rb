@@ -1,5 +1,20 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
+  get 'allergies/index'
+  get 'allergies/show'
+  get 'allergies/create'
+  get 'allergies/destroy'
+  get 'compound_mixes/create'
+  get 'medicines/index'
+  get 'medicines/emergency'
+  get 'medicines/show'
+  get 'medicines/create'
+  get 'medicines/destroy'
+  get 'medicines/search_medicine'
+  get 'substances/index'
+  get 'substances/show'
+  get 'substances/create'
+  get 'substances/destroy'
   devise_for :users, path: 'users', controllers: { 
     sessions:           "users/sessions",
     passwords:          "users/passwords",
