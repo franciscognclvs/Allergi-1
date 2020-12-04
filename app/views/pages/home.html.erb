@@ -1,4 +1,21 @@
 <div class="container" align="center">
+<<<<<<< HEAD
+	<div class="banner">
+	  <div class="card-home">
+	 
+	      <h1>Allergi <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+	      <p>Change your life and learn to code at one of our campuses around the world</p>
+        <button type="button" class="btn btn-light">Light</button>
+	      
+	 
+	  </div>
+	</div>
+
+	<%= form_tag("medicines/search_medicine", method: "get") do %>
+  		<%= label_tag(:remedio, "Procure pelo Remédio:") %>
+  		<%= text_field_tag(:remedio) %>
+  		<%= submit_tag("Search") %>
+=======
 	<% if current_user %>
 				<div class="banner">
 			<div class="card-home">
@@ -14,5 +31,6 @@
 	        	<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-light" %>
 		    </div>
 		</div>
+>>>>>>> master
 	<% end %>
 </div>
