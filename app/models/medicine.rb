@@ -6,9 +6,9 @@ class Medicine < ApplicationRecord
   has_many :substances, through: :compound_mixes
   has_one_attached :photo
 
-  def self.consulta_remedio(params)
-    busca_remedio = "https://consultaremedios.com.br/b/#{params}"
-    body = Nokogiri::HTML(open(busca_remedio).read)
-    return body
-  end
+  # def self.consulta_remedio(params)
+  #   busca_remedio = "https://consultaremedios.com.br/b/#{params}"
+  #   body = Nokogiri::HTML(open(busca_remedio).read)
+  #   return body
+  # end
 end

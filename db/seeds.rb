@@ -143,4 +143,30 @@
 # 		puts "#{s.name} #{m.name} created on db"
 # 	end
 # end
+puts 'Criando Substances'
+sleep 2
+s1 = Substance.create!(name:'Dipirona monoidratada')
+s2 = Substance.create!(name:'Paracetamol')
+s3 = Substance.create!(name:'Ibuprofeno')
+s4 = Substance.create!(name:'Acido Acetilsalicílico')
+puts 'OK'
+
+puts 'Criando Medicines'
+sleep 2
+m1 = Medicine.create!(name: 'Novalgina', principle: 'Dipirona monoidratada', laboratory: 'Sanofi Medley')
+m2 = Medicine.create!(name: 'Tylenol', principle: 'Paracetamol', laboratory:'Janssen-Cilag')
+m3 = Medicine.create!(name: 'Advil', principle: 'Ibuprofeno', laboratory:'Wyeth/Pfizer')
+m4 = Medicine.create!(name: 'Dorflex', principle: 'Dipirona monoidratada', laboratory:'Sanofi Medley')
+m5 = Medicine.create!(name: 'Aspirina', principle: 'Acido Acetilsalicílico', laboratory: 'Bayer')
+puts 'OK'
+
+puts 'Criando CompoundMix'
+sleep 2
+
+CompoundMix.create!(substance: s1, medicine: m1)
+CompoundMix.create!(substance: s1, medicine: m4)
+CompoundMix.create!(substance: s2, medicine: m2)
+CompoundMix.create!(substance: s3, medicine: m3)
+CompoundMix.create!(substance: s4, medicine: m5)
+puts 'OK'
 
