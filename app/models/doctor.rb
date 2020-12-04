@@ -5,4 +5,6 @@ class Doctor < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, :phone, :crm, :address, :emergency_phone, presence: true
   has_one_attached :photo
+  has_many :users
+  has_many :appointments
 end

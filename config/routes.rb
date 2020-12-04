@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :compound_mixes
   resources :medicines
   resources :substances
+  resources :appointments
 end
