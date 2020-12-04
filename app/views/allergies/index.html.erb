@@ -1,24 +1,26 @@
 <div class="container d-flex justify-content-center mt-4">
   <div class="allergi">
     <br>
-    <span class="perfil">
-      <%= image_tag "Juan_Dantas.jpg"%>
-    </span>
+    <div class="perfil">
+      <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}]%>
+      <% end %>
+    </div>
     <br>
     <br>
-    <%= "Hello @user.name" %>
+    <%= "Hello" %>
     <br>
 
     <div class="card-login">
       <form>
         <div id="botao">
-            <input type="submit" name="botao" value="inserir Alergia" class="btn btn-success btn-lg btn-block" />
+            <%= link_to 'Cadastrar alergia', medicines_search_medicine_path, class: "btn btn-secondary" %>
         </div>
       </form>
       <br>
       <form>
         <div id="botao">
-          <input type="submit" name="botao" value="Pesquisar Medicamento" class="btn btn-success btn-lg btn-block" />
+          <%= link_to 'Pesquisar Medicamento', medicines_search_medicine_path, class: "btn btn-secondary" %>
         </div>
       </form>
     </div>

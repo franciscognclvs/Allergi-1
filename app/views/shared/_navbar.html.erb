@@ -21,7 +21,7 @@
           <%= image_tag "https://st3.depositphotos.com/9412676/12748/v/950/depositphotos_127481014-stock-illustration-standard-user-icon-set.jpg", transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}], class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "User Page", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "User Page", allergies_path, class: "dropdown-item" %>
             <%= link_to "Allergies", "#", class: "dropdown-item" %>
             <%= link_to "My Doctor", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
