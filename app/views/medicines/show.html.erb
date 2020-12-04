@@ -1,13 +1,21 @@
-<div class="container">
-  <%= form_tag medicines_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a medicine"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<div class="container-medicines d-flex justify-content-center mt-2">
+  <div class="card-princip">
+  <br>
+      <h2>Principio Ativo</h2>
+    <div class="card-medicines" style="width: 19rem;">
+      <img class="card-img" src="https://uploads.consultaremedios.com.br/product_variation_images/full/0854799fa4aa549f15a647bc1a34d77d4af3fa70.jpg?1590690071" alt="Card image cap">
+      <div class="card-body">
+      <h4 class="card-text">nome medicamento.</h4>
+      <br>
+      <h6>laboratório</h6>
+      </div>
+    </div>
+  </div>
 </div>
 
-
+<div class="container d-flex justify-content-center mt-4">
+  <%= form_tag medicines_path, method: :get do %>
+        <%= submit_tag "Adicionar a Medicamentos Proibidos", class: "btn btn-danger" %>
+  <% end %>
+</div>
 
