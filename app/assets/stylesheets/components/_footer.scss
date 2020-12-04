@@ -1,6 +1,8 @@
 .footer{
   background: #152F4F;
-  color:white;
+  color: white; 
+  text-shadow: rgb(39, 39, 39) 0.1em 0.1em 0.2em; 
+  font-family: 'Helvetica Neue', sans-serif;
   
   
   .links{
@@ -26,4 +28,7 @@
     i{font-size: 18px;}
   }
   .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+}
+.fa-github{
+  font-size: 30px;
 }
