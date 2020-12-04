@@ -1,8 +1,14 @@
-h1{
-font-family: roboto;
+h1 {
+	font-family: roboto;
+	text-align: center;
 };
+
+h2 {
+    text-align: center;
+}
 .card-img {
   background-color: #bebebe;
+  content-align: center;
 };
 
 .card-text {
@@ -19,4 +25,8 @@ font-family: roboto;
 	margin:auto;
 	border-radius: 2%;
   background-color: white;
+}
+
+.card-body {
+  text-align: center;
 }

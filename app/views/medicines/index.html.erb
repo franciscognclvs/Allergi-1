@@ -13,7 +13,7 @@
 	  <div class="card-product">
 	      <%= cl_image_tag medicines.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
 	      <div class="card-product-infos">
-	      <h2><%= medicines.principle %></h2>
+	      <h5><%= medicines.principle %></h5>
 	      <h4><%= link_to medicines.name, medicines %></h4>
 	      <p><%= medicines.laboratory %></p>
 	    </div>
