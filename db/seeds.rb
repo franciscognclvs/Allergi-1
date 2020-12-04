@@ -180,3 +180,18 @@ User.create!(name:'Willian Arão', phone: '11990909090', cpf: '12312312312', add
 puts 'OK'
 
 
+puts 'Criando Reações Alergicas'
+sleep 1
+Reaction.create!(name:'Espirro')
+Reaction.create!(name:'Falta de ar')
+Reaction.create!(name:'Respiração ofegante')
+Reaction.create!(name:'Coriza')
+Reaction.create!(name:'Erupção cutânea')
+Reaction.create!(name:'Urticária')
+Reaction.create!(name:'Inchaço')
+Reaction.create!(name:'Coceira')
+Reaction.create!(name:'Náusea')
+Reaction.create!(name:'Vômito')
+Reaction.create!(name:'Cólica')
+Reaction.create!(name:'Diarreia')
+puts 'OK'

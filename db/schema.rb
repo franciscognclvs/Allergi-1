@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_191052) do
+ActiveRecord::Schema.define(version: 2020_12_04_175039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_191052) do
   create_table "allergies", force: :cascade do |t|
     t.string "reactions"
     t.string "medicine_name"
-    t.bigint "user_id", null: false
-    t.bigint "substance_id", null: false
+    t.bigint "user_id"
+    t.bigint "substance_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["substance_id"], name: "index_allergies_on_substance_id"
@@ -96,6 +96,14 @@ ActiveRecord::Schema.define(version: 2020_12_03_191052) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
+  create_table "reactions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "allergy_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["allergy_id"], name: "index_reactions_on_allergy_id"
+  end
+
   create_table "substances", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -125,4 +133,5 @@ ActiveRecord::Schema.define(version: 2020_12_03_191052) do
   add_foreign_key "allergies", "users"
   add_foreign_key "compound_mixes", "medicines"
   add_foreign_key "compound_mixes", "substances"
+  add_foreign_key "reactions", "allergies"
 end
