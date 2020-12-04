@@ -1,13 +1,13 @@
 <div class="container-medicines d-flex justify-content-center mt-2">
   <div class="card-princip">
   <br>
-      <h2>Principio Ativo</h2>
+      <h2><%= @medicine.principle %> </h2>
     <div class="card-medicines" style="width: 19rem;">
-      <img class="card-img" src="https://uploads.consultaremedios.com.br/product_variation_images/full/0854799fa4aa549f15a647bc1a34d77d4af3fa70.jpg?1590690071" alt="Card image cap">
+      <%= cl_image_tag @medicine.photo.key %>
       <div class="card-body">
-      <h4 class="card-text">nome medicamento.</h4>
+      <h4 class="card-text"><%= @medicine.name %></h4>
       <br>
-      <h6>laboratório</h6>
+      <h6><%= @medicine.laboratory %></h6>
       </div>
     </div>
   </div>
@@ -15,7 +15,9 @@
 
 <div class="container d-flex justify-content-center mt-4">
   <%= form_tag medicines_path, method: :get do %>
-        <%= submit_tag "Adicionar a Medicamentos Proibidos", class: "btn btn-danger" %>
+        <%= submit_tag "Add medicine to allergies", class: "btn btn-warning mx-02" %>
   <% end %>
+
+  <%= link_to 'I Took the medicine!', medicines_emergency_path({medicine_name: @medicine.name, medicine_principle: @medicine.principle}), class: "btn btn-danger" %>
 </div>
 
