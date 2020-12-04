@@ -1,2 +1,22 @@
-<h1>Medicines#index</h1>
-<p>Find me in app/views/medicines/index.html.erb</p>
+<div class="container">
+	<%= form_tag medicines_path, method: :get do %>
+	  <%= text_field_tag :query,
+	    params[:query],
+	    class: "form-control",
+	    placeholder: "Find a medicine"
+	  %>
+	  <%= submit_tag "Search", class: "btn btn-primary" %>
+	<% end %>
+
+	<h1>Sua busca de medicamentos</h1>
+	<% @medicines.each do |medicines| %>
+	  <div class="card-product">
+	      <%= cl_image_tag medicines.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
+	      <div class="card-product-infos">
+	      <h2><%= medicines.principle %></h2>
+	      <h4><%= link_to medicines.name, medicines %></h4>
+	      <p><%= medicines.laboratory %></p>
+	    </div>
+	  </div>
+	<% end %>
+</div>

@@ -1,15 +1,11 @@
-
-<div class="container justify-content-center">
-	<% @remedios.each do |remedio| %>
-		<div class="cards d-inline-flex">
-			<div class="card">
-			  <img class="card-img-top" src="https://<%= remedio[:photo] %>" alt="<%= remedio[:title] %>">
-			    <p class="card-title"><strong>Substance:</strong> <%= remedio[:substance] %></p>
-			    <h5 class="card-text"><strong>Name:</strong> <%= remedio[:title] %></h5>
-			    <p class="card-text"><strong>Laboratory:</strong> <%= remedio[:laboratory] %></p>
-			    <a href="#" class="btn btn-outline-warning">Tenho Reação!</a>
-			</div>
-		</div>
+<div class="container">
+	<h2>Search your medicine</h2>
+	<%= form_tag medicines_path, method: :get do %>
+	  <%= text_field_tag :query,
+	    params[:query],
+	    class: "form-control",
+	    placeholder: "Find a medicine"
+	  %>
+	  <%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
 </div>
-
