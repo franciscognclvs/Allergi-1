@@ -11,7 +11,7 @@ class MedicinesController < ApplicationController
   end
 
   def show
-    @medicine = Medicine.new
+    @medicine = Medicine.find(params[:id])
   end
 
   def create

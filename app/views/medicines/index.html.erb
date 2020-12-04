@@ -11,7 +11,9 @@
 	<h1>Sua busca de medicamentos</h1>
 	<% @medicines.each do |medicines| %>
 	  <div class="card-product">
+		  <% if medicines.photo == true %>
 	      <%= cl_image_tag medicines.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
+			<% end %>
 	      <div class="card-product-infos">
 	      <h2><%= medicines.principle %></h2>
 	      <h4><%= link_to medicines.name, medicines %></h4>

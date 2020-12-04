@@ -26,4 +26,5 @@ class AllergiesController < ApplicationController
 
   def allergy_params
     params.require(:allergy).permit(reaction_attributes: [:id, :name, :_destroy])
+  end
 end
