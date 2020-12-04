@@ -3,12 +3,12 @@
     <br>
     <div class="perfil">
       <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, transformation: [{width: 70, height: 70, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}]%>
+      <%= cl_image_tag current_user.photo.key, transformation: [{width: 150, crop: "scale"}]%>
       <% end %>
     </div>
     <br>
     <br>
-    <%= "Hello" %>
+    <h3>Hello <%= current_user.name %></h3>
     <br>
 
     <div class="card-login">
