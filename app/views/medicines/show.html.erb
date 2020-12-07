@@ -3,7 +3,7 @@
   <br>
       <h2><%= @medicine.principle %> </h2>
     <div class="card-medicines" style="width: 19rem;">
-      <% if @medicine.photo == true %>
+      <% if @medicine.photo.attached? %>
         <%= cl_image_tag @medicine.photo.key %>
       <% end %>
       <div class="card-body">
@@ -17,7 +17,7 @@
 
 <div class="container d-flex justify-content-center mt-4">
   <%# <%= form_tag medicines_path, method: :post do %>
-  <%# <% end %> %> %>
+  <%# <% end %>
   <%= link_to "Add medicine to allergies", medicine_allergies_path(@medicine.id), class: "btn btn-warning mx-02", method: :post %>
 
   <%= link_to 'I Took the medicine!', medicines_emergency_path({medicine_name: @medicine.name, medicine_principle: @medicine.principle}), class: "btn btn-danger mx-02" %>
