@@ -1,6 +1,7 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
   get 'pages/user_page'
+
   # get 'allergies/index'
   # get 'allergies/show'
   # get 'allergies/create'
@@ -37,4 +38,5 @@ Rails.application.routes.draw do
   resources :substances
   resources :appointments
   resources :allergies_reactions
+  resources :users, only: :index
 end

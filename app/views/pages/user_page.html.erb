@@ -3,7 +3,7 @@
     <br>
     <div class="perfil">
       <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, transformation: [{width: 150, crop: "scale"}]%>
+      <%= cl_image_tag current_user.photo.key, transformation: [{width: 150, height: 150, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 150, crop: "scale"}]%>
       <% end %>
     </div>
     <br>
@@ -15,13 +15,13 @@
     <div class="card-login">
       <form>
         <div id="botao">
-            <%= link_to 'Cadastrar alergia', medicines_search_medicine_path, class: "btn btn-secondary" %>
+            <%= link_to 'Register allergy', medicines_search_medicine_path, class: "btn btn-secondary btn-block" %>
         </div>
       </form>
       <br>
       <form>
         <div id="botao">
-          <%= link_to 'Pesquisar Medicamento', medicines_search_medicine_path, class: "btn btn-secondary" %>
+          <%= link_to 'Search medicine', medicines_search_medicine_path, class: "btn btn-secondary btn-block" %>
         </div>
       </form>
     </div>
