@@ -1,3 +1,3 @@
 class Reaction < ApplicationRecord
-  belongs_to :allergy, optional: true
+  has_many :allergies, through: :allergies_reactions
 end

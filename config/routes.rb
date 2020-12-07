@@ -1,20 +1,22 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
-  get 'allergies/index'
-  get 'allergies/show'
-  get 'allergies/create'
-  get 'allergies/destroy'
-  get 'compound_mixes/create'
-  get 'medicines/index'
+  get 'pages/user_page'
+  # get 'allergies/index'
+  # get 'allergies/show'
+  # get 'allergies/create'
+  # get 'allergies/destroy'
+  # get 'compound_mixes/create'
+  # get 'medicines/index'
   get 'medicines/emergency'
-  get 'medicines/show'
-  get 'medicines/create'
-  get 'medicines/destroy'
+  # get 'medicines/show'
+  # get 'medicines/create'
+  # get 'medicines/destroy'
   get 'medicines/search_medicine'
-  get 'substances/index'
-  get 'substances/show'
-  get 'substances/create'
-  get 'substances/destroy'
+  # get 'substances/index'
+  # get 'substances/show'
+  # get 'substances/create'
+  # get 'substances/destroy'
+  # get '/medicines/:medicine_id/allergies/new', to: 'allergies#new', as: 'allergy'
   devise_for :users, path: 'users', controllers: { 
     sessions:           "users/sessions",
     passwords:          "users/passwords",
@@ -34,4 +36,5 @@ Rails.application.routes.draw do
   end
   resources :substances
   resources :appointments
+  resources :allergies_reactions
 end

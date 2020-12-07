@@ -1,6 +1,6 @@
 class Allergy < ApplicationRecord
-  has_many :reactions, inverse_of: :project
-  accepts_nested_attributes_for :reactions, reject_if: :all_blank, allow_destroy: true
+  has_many :allergies_reactions
+  has_many :reactions, through: :allergies_reactions
   belongs_to :user, optional: true
-  belongs_to :substance, optional: true
+  belongs_to :medicine, optional: true
 end

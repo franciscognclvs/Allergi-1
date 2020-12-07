@@ -5,15 +5,21 @@ class AllergiesController < ApplicationController
   end
 
   def show
+    @allergy = Allergy.find(params[:id])
+    @allergies_reactions = AllergiesReaction.new
+  end
+
+  def new
+    @allergy = Allergy.new
+    @medicine = Medicine.find(params[:medicine_id])
   end
 
   def create
-    @medicine = Medicine.find(params[:medicine_id])
-    @allergy = Allergy.new(allergy_params)
+    @allergy = Allergy.new
+    @allergy.medicine = Medicine.find(params[:medicine_id])
     @allergy.user = current_user
-    @allergy.substance = @medicine.compound_mix.substance
     if @allergy.save
-      redirect_to allergy_path(@allergy)
+      redirect_to medicine_allergy_path(@allergy.medicine, @allergy)
     else
       render :new
     end
@@ -25,6 +31,6 @@ class AllergiesController < ApplicationController
   private
 
   def allergy_params
-    params.require(:allergy).permit(reaction_attributes: [:id, :name, :_destroy])
+    params.require(:allergy).permit(:medicine_id)
   end
 end

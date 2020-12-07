@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_175039) do
+ActiveRecord::Schema.define(version: 2020_12_07_145549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,14 +37,21 @@ ActiveRecord::Schema.define(version: 2020_12_04_175039) do
   end
 
   create_table "allergies", force: :cascade do |t|
-    t.string "reactions"
-    t.string "medicine_name"
     t.bigint "user_id"
-    t.bigint "substance_id"
+    t.bigint "medicine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["substance_id"], name: "index_allergies_on_substance_id"
+    t.index ["medicine_id"], name: "index_allergies_on_medicine_id"
     t.index ["user_id"], name: "index_allergies_on_user_id"
+  end
+
+  create_table "allergies_reactions", force: :cascade do |t|
+    t.bigint "allergy_id"
+    t.bigint "reaction_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["allergy_id"], name: "index_allergies_reactions_on_allergy_id"
+    t.index ["reaction_id"], name: "index_allergies_reactions_on_reaction_id"
   end
 
   create_table "appointments", force: :cascade do |t|
@@ -98,10 +105,8 @@ ActiveRecord::Schema.define(version: 2020_12_04_175039) do
 
   create_table "reactions", force: :cascade do |t|
     t.string "name"
-    t.bigint "allergy_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["allergy_id"], name: "index_reactions_on_allergy_id"
   end
 
   create_table "substances", force: :cascade do |t|
@@ -129,9 +134,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_175039) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "allergies", "substances"
+  add_foreign_key "allergies", "medicines"
   add_foreign_key "allergies", "users"
+  add_foreign_key "allergies_reactions", "allergies"
+  add_foreign_key "allergies_reactions", "reactions"
   add_foreign_key "compound_mixes", "medicines"
   add_foreign_key "compound_mixes", "substances"
-  add_foreign_key "reactions", "allergies"
 end

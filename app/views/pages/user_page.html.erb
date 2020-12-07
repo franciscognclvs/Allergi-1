@@ -1,0 +1,29 @@
+<div class="container d-flex justify-content-center mt-4">
+  <div class="allergi">
+    <br>
+    <div class="perfil">
+      <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, transformation: [{width: 150, crop: "scale"}]%>
+      <% end %>
+    </div>
+    <br>
+    <br>
+    <h3>Hello <%= current_user.name %></h3>
+    <p>My doctor: "nome do doutor" </p>
+    <br>
+
+    <div class="card-login">
+      <form>
+        <div id="botao">
+            <%= link_to 'Cadastrar alergia', medicines_search_medicine_path, class: "btn btn-secondary" %>
+        </div>
+      </form>
+      <br>
+      <form>
+        <div id="botao">
+          <%= link_to 'Pesquisar Medicamento', medicines_search_medicine_path, class: "btn btn-secondary" %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
