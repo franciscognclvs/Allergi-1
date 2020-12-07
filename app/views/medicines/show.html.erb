@@ -16,8 +16,6 @@
 </div>
 
 <div class="container d-flex justify-content-center mt-4">
-  <%# <%= form_tag medicines_path, method: :post do %>
-  <%# <% end %> %> %>
   <%= link_to "Add medicine to allergies", medicine_allergies_path(@medicine.id), class: "btn btn-warning mx-02", method: :post %>
 
   <%= link_to 'I Took the medicine!', medicines_emergency_path({medicine_name: @medicine.name, medicine_principle: @medicine.principle}), class: "btn btn-danger mx-02" %>
