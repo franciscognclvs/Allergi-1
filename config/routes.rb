@@ -1,5 +1,6 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
+  get 'pages/user_page'
   get 'allergies/index'
   get 'allergies/show'
   get 'allergies/create'
