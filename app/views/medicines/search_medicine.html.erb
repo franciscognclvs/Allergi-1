@@ -1,11 +1,21 @@
-<div class="container">
+<div class="container mt-5" >
 	<h2>Search your medicine</h2>
-	<%= form_tag medicines_path, method: :get do %>
+	<div class="mt-3 d-flex w-100 flex-row">
+		<%= form_tag medicines_path, class: "d-flex flex-row form-group w-100", method: :get do %>
 	  <%= text_field_tag :query,
 	    params[:query],
 	    class: "form-control",
-	    placeholder: "Find a medicine"
-	  %>
-	  <%= submit_tag "Search", class: "btn btn-primary" %>
+	    placeholder: "Find a medicine"%>
+	  <div><%= submit_tag "Search", class: "btn btn-primary"%></div>
 	<% end %>
+	</div>
+</div>
+<button type="button" class="btn btn-primary active" style="display: none;" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <h1>ATTENTION <i class="fas fa-exclamation-triangle"></i></h1><br><br>
+		 <p>DO NOT USE ANY MEDICATION WITHOUT MEDICAL ADVICE. IN CASE OF EMERGENCY, LOOK FOR THE NEAREST HOSPITAL <i class="fas fa-clinic-medical"></i></p>
+    </div>
+  </div>
 </div>
