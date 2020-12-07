@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   resources :medicines
   resources :substances
   resources :appointments
+  resources :users, only: :index
 end
