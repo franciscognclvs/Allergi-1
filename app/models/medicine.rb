@@ -5,6 +5,7 @@ class Medicine < ApplicationRecord
   has_many :compound_mixes
   has_many :substances, through: :compound_mixes
   has_one_attached :photo
+  has_many :allergies
 
   # def self.consulta_remedio(params)
   #   busca_remedio = "https://consultaremedios.com.br/b/#{params}"

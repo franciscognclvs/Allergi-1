@@ -1,2 +1,10 @@
-<h1>Allergies#show</h1>
-<p>Find me in app/views/allergies/show.html.erb</p>
+<h1>Alergias a <%= @allergy.medicine.name %></h1>
+<h4>Reações alérgicas</h4>
+<% @allergy.reactions.each do |reaction| %>
+  <p><%= reaction.name %></p>
+<% end %>
+<%= simple_form_for @allergies_reactions do |f| %>
+  <%= f.input :allergy, as: :hidden, input_html:{value: @allergy.id}  %>
+  <%= f.association :reaction, collection: Reaction.order('name') %>
+  <%= f.submit %>
+<% end  %>

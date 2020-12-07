@@ -1,0 +1,4 @@
+<%= simple_form_for [@medicine, @allergy] do |f| %>
+  <%= f.association :reactions, collection: Reaction.order('name')  %>
+  <%= f.button :submit %>
+<% end %>
