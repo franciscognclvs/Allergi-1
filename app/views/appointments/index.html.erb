@@ -1,6 +1,7 @@
 <div class="container">
 	<% if current_doctor %>
-	My patients:
+		<br>
+		<h3>My Patients:</h3>
 		<% if @appointments.present? %>
 			<% @appointments.each do |appointment| %>
 				  <div class="card-product">
@@ -8,7 +9,7 @@
 				      <%= cl_image_tag appointment.user.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
 						<% end %>
 				      <div class="card-product-infos">
-				      <h5><%= appointment.user.name %></h5>
+				      <h5><%= link_to appointment.user.name, user_path(appointment.user) %></h5>
 				      <p><%= appointment.user.email %></p>
 				      <p><%= appointment.user.cpf %></p>
 				      <p><%= appointment.user.birthdate %></p>
@@ -31,6 +32,7 @@
 				  <div class="card-product">
 					  <% if appointment.doctor.photo.attached? %>
 				      <%= cl_image_tag appointment.doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
+						<br>
 						<% end %>
 				      <div class="card-product-infos">
 				      <h5><%= appointment.doctor.name %></h5>

@@ -6,4 +6,8 @@ class UsersController < ApplicationController
 		@users = User.where(doctor: current_doctor)
 	end
 
+	def show
+		@user = User.find(params[:id])
+	end
+
 end

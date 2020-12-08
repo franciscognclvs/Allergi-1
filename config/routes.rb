@@ -38,5 +38,5 @@ Rails.application.routes.draw do
   resources :substances
   resources :appointments
   resources :allergies_reactions
-  resources :users, only: :index
+  resources :users, only: [:index, :show]
 end
