@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :name, :phone, :cpf, :weight, :address, :email, presence: true
   has_one_attached :photo
   has_many :appointments
-  has_one :doctor
+  has_one :doctor, through: :appointments
 end

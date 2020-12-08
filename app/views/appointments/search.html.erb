@@ -1,0 +1,9 @@
+Doutores disponiveis:
+<% @doctors.each do |doctor| %>
+<ul>
+	<li> <%= doctor.name %> </li>
+	<li> <%= doctor.phone %> </li>
+	<li> <%= doctor.emergency_phone %> </li>
+	<li> <%= link_to 'Choose doctor', appointments_path(id: doctor.id), method: :post %> </li>
+</ul>
+<% end %>
