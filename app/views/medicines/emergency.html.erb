@@ -15,5 +15,7 @@
   </div>
   <div class="buttons"> 
     <%= link_to "Emergência 192", "tel:192", class: "btn btn-outline-light btn-lg" %>
-    <%= link_to "Contato Médico", "tel:7679869", class: "btn btn-outline-light btn-lg" %>
+    <% if @appointments.present? %>
+    <%= link_to "Contato Médico", "tel:", @appointment.doctor.emergency_phone, class: "btn btn-outline-light btn-lg" %>
+    <% end %>
   </div>
