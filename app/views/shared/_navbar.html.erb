@@ -20,7 +20,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "User Page", pages_user_page_path, class: "dropdown-item" %>
             <%= link_to "Allergies", "#", class: "dropdown-item" %>
-            <%= link_to "My Doctor", "#", class: "dropdown-item" %>
+            <%= link_to "My Doctor", appointments_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -36,7 +36,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Doctor Page", edit_doctor_registration_path, class: "dropdown-item" %>
-            <%= link_to "My Patients", "#", class: "dropdown-item" %>
+            <%= link_to "My Patients", appointments_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_doctor_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

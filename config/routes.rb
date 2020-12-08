@@ -1,7 +1,6 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
   get 'pages/user_page'
-
   # get 'allergies/index'
   # get 'allergies/show'
   # get 'allergies/create'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   # get 'medicines/create'
   # get 'medicines/destroy'
   get 'medicines/search_medicine'
+  get 'appointments/search'
   # get 'substances/index'
   # get 'substances/show'
   # get 'substances/create'
