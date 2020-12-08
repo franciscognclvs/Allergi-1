@@ -1,7 +1,5 @@
-<h1>Alergias a <%= @allergy.medicine.name %></h1>
-<h4>Reações alérgicas</h4>
-
-
+<h1>Allergies to <%= @allergy.medicine.name %></h1><br>
+<h4>Allergic Reactions</h4>
 <%= simple_form_for [@allergy, @allergies_reactions] do |f| %>
   <%= f.collection_check_boxes :reaction_id, Reaction.all, :id, :name, :include_hidden => false  %>
   <%# <%= f.input :allergy, as: :hidden, input_html:{value: @allergy.id}  %>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"><br>
 	<% if current_doctor %>
 	<h2>My patients:</h2>
 		<% if @appointments.present? %>
@@ -42,7 +42,7 @@
 		<% else %>
 		<h1>You don`t have any doctor</h1>
 		<% end %>
-		<%= link_to 'Add one doctor', appointments_search_path %>
+		<button type="button" style="text" class="btn btn-warning"><%= link_to 'Add one doctor', appointments_search_path %></button>
 
 	<% end %>
 </div>
