@@ -19,4 +19,8 @@ class MedicinesController < ApplicationController
 
   def destroy
   end
+
+  def emergency
+    @appointment = current_user.appointments.last
+  end
 end
