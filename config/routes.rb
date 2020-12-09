@@ -1,7 +1,7 @@
 Rails.application.routes.draw do  
   root to: 'pages#home'
   get 'pages/user_page'
-  get 'medicines/emergency'
+  get 'medicines/:id/emergency', to: 'medicines#emergency', as: 'emergency'
   get 'medicines/search_medicine'
   get 'appointments/search'
   devise_for :users, path: 'users', controllers: { 
