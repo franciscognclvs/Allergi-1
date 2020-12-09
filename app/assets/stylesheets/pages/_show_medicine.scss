@@ -1,6 +1,8 @@
 .container-medicines {
   background-color: #152f4f;
-  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: black  0.1em 0.1em 0.4em;
+  margin-bottom: 65px;
   .show-medicine {
     background-color: #152f4f;
     h2 {
@@ -22,13 +24,14 @@
       font-style: italic;
     }
     .p1 {
-      font-size: 27px;
+      padding-bottom: 35px;
+      font-size: 29px;
       color: rgb(255, 255, 255);
       text-shadow: black 0.1em 0.1em 0.2em;
       animation: p1 0.7s infinite;
       margin: 0 auto;
       display: table;
-      margin-top: 50px;
+      margin-top: 28px;
       animation-direction: alternate;
       -webkit-animation-name: p1;
       animation-name: p1;
@@ -54,7 +57,15 @@
         filter: brightness(100%);
       }
     }
+    .p2 {
+      font-size: 22px;
+      color: rgb(255, 255, 255);
+      text-shadow: black 0.1em 0.1em 0.2em;
+    }
     }
  
-  
+}
+.btn-warning {
+  margin-right: 30px;
+  padding: 8px;
 }
