@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   end
   resources :substances
   resources :appointments
-  resources :users, only: :index
+  resources :allergies_reactions
+  resources :users, only: [:index, :show]
 end
