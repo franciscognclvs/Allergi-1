@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   resources :appointments
   resources :allergies_reactions
   resources :users, only: [:index, :show]
+  resources :active_problems, only: [:create, :destroy]
 end

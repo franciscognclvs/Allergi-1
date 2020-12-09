@@ -1,15 +1,18 @@
 .allergi {
   text-align: center;
-  background-color:#bebebe;
+  background-color:#152F4F;
   border-radius: 20px;
-};
+  box-shadow: black  0.1em 0.1em 0.4em;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
 
 .card-login{
-  background-color: #bebebe;
+  background-color: #152F4F;
   border: #bebebe;
   border-radius: 20px;
   padding: 20px;
-};
+}
 
 .perfil img {
 	border-radius: 50%;
@@ -18,3 +21,15 @@
 .perfil {
 	width: 400px;
 }
+  h3 {
+  color: white; 
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 30px;
+  }
+  .p-userpage{
+    color: rgb(252, 239, 55);
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: 18px;
+    font-style: italic;
+    padding-top: 20px;
+  }

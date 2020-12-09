@@ -8,22 +8,15 @@
     </div>
     <br>
     <br>
-    <h3>Hello <%= current_user.name %></h3>
-    <p>My doctor: "nome do doutor" </p>
-    <br>
+    <h3>Hello, <%= current_user.name %></h3>
 
     <div class="card-login">
-      <form>
-        <div id="botao">
-            <%= link_to 'Register allergy', medicines_search_medicine_path, class: "btn btn-secondary btn-block" %>
-        </div>
-      </form>
-      <br>
+    
       <form>
         <div id="botao">
           <%= link_to 'Search medicine', medicines_search_medicine_path, class: "btn btn-secondary btn-block" %>
           <br>
-          Remember to see your doctor!
+          <p class="p-userpage">Remember to see your doctor!</p>
         </div>
       </form>
     </div>
