@@ -1,11 +1,19 @@
 <div class="container-1">
   <div class="container-2 pt-5">  
 
-    <h2> <%= params[:medicine_name] %></h2><br>
+    <h2> <%= @medicine.name %></h2><br>
     <h2>Principio Ativo:<br>
-        <%= params[:medicine_principle] %><br>
-        Possivel reação:<br>
-        Edema de Glote
+        <%= @medicine.principle %>
+        <br>Possivel reação:<br>
+        <ul>
+        <% @allergies.each do |allergy| %>
+          <% allergy.reactions.each do |reaction| %>         
+            <li><%= reaction.name %></li>
+          <% end %>
+        <% end %>
+        </ul>
+        
+
     </h2>
   </div>
   <div class="container-3">

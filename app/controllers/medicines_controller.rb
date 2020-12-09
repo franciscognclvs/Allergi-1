@@ -1,5 +1,6 @@
 class MedicinesController < ApplicationController
- 	skip_before_action :authenticate_user!
+   skip_before_action :authenticate_user!
+   before_action :set_allergies, only: [:show, :emergency]
 
   def index
     if params[:query].present?
@@ -11,14 +12,6 @@ class MedicinesController < ApplicationController
   end
 
   def show
-    @medicine = Medicine.find(params[:id])
-    @allergies = current_user.allergies
-    @allergies.each do |allergy|
-      @allergies_reactions = AllergiesReaction.where(allergy_id: allergy.id)
-    end
-    @allergies_reactions.each do |reaction|
-      @reactions = Reaction.where(id: reaction.reaction_id)
-    end
   end
 
   def create
@@ -28,6 +21,12 @@ class MedicinesController < ApplicationController
   end
 
   def emergency
-    @appointment = current_user.appointments.last
+  end
+
+  private
+
+  def set_allergies
+    @medicine = Medicine.find(params[:id])
+    @allergies = Allergy.includes(:reactions).where(user: current_user, medicine: @medicine)
   end
 end

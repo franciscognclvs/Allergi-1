@@ -19,10 +19,12 @@
          <p><strong>Você tem alergia a este remédio!</strong></p>
          <p>Podem ocorrer as seguintes reações:</p>
          <ul>
-          <% @reactions.each do |reaction| %>
-            <li>
-              <%= reaction.name %>
-            </li>
+         <% @allergies.each do |allergy| %>
+            <% allergy.reactions.each do |reaction| %>
+              <li>
+                <%= reaction.name %>
+              </li>
+            <% end %>
           <% end %>
          </ul>
          <% else %>
@@ -39,6 +41,6 @@
   <%# <% end %>
   <%= link_to "Add medicine to allergies",  medicine_allergies_path(@medicine), class: "btn btn-warning mx-02", method: :post %>
 
-  <%= link_to 'I Took the medicine!', medicines_emergency_path({medicine_name: @medicine.name, medicine_principle: @medicine.principle}), class: "btn btn-danger mx-02" %>
+  <%= link_to 'I Took the medicine!', emergency_path(@medicine), class: "btn btn-danger mx-02" %>
 </div>
 
