@@ -1,26 +1,11 @@
 class AllergiesReactionsController < ApplicationController
 
-  def new
-    @allergy = Allergy.find(params[:allergy_id])
-    @allergies_reaction = AllergiesReaction.new
-  end
-
   def create
-    @allergy = Allergy.find(params[:allergies_reaction][:allergy])
-    @reaction = Reaction.find(params[:allergies_reaction][:reaction_id])
-    @allergies_reaction = AllergiesReaction.new
-    @allergies_reaction.allergy = @allergy
-    @allergies_reaction.reaction = @reaction
-    if @allergies_reaction.save
-      redirect_to medicine_allergy_path(@allergy.medicine, @allergy)
-    else
-      render :new
+    reaction_ids = params[:allergies_reaction][:reaction_id]
+    allergy = Allergy.find(params[:allergy_id])
+    reaction_ids.each do |reaction_id|
+      AllergiesReaction.create(reaction_id: reaction_id, allergy: allergy)
     end
-  end
-
-  private
-
-  def allergies_reactions_params
-    params.require(:allergies_reaction).permit(:allergy, :reaction)
+    redirect_to medicine_path(allergy.medicine)
   end
 end

@@ -1,10 +1,9 @@
-<h1>Alergias a <%= @allergy.medicine.name %></h1>
-<h4>Reações alérgicas</h4>
-<% @allergy.reactions.each do |reaction| %>
-  <p><%= reaction.name %></p>
-<% end %>
-<%= simple_form_for @allergies_reactions do |f| %>
-  <%= f.input :allergy, as: :hidden, input_html:{value: @allergy.id}  %>
-  <%= f.association :reaction, collection: Reaction.order('name') %>
+<h1>Allergies to <%= @allergy.medicine.name %></h1><br>
+<h4>Allergic Reactions</h4>
+<%= simple_form_for [@allergy, @allergies_reactions] do |f| %>
+  <%= f.collection_check_boxes :reaction_id, Reaction.all, :id, :name, :include_hidden => false  %>
+  <%# <%= f.input :allergy, as: :hidden, input_html:{value: @allergy.id}  %>
   <%= f.submit %>
-<% end  %>
+<% end %>
+
+
