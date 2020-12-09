@@ -1,6 +1,6 @@
 class MedicinesController < ApplicationController
-   skip_before_action :authenticate_user!
-   before_action :set_allergies, only: [:show, :emergency]
+  skip_before_action :authenticate_user!
+  before_action :set_allergies, only: %i[show emergency]
 
   def index
     if params[:query].present?
@@ -12,6 +12,7 @@ class MedicinesController < ApplicationController
   end
 
   def show
+    @medicine.reactions
   end
 
   def create
