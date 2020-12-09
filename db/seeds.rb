@@ -120,7 +120,7 @@ substances.each do |substance|
 	s = Substance.create!(
 			name: substance
 		)
-	html_doc.search('.result-item').first(2).each do |item|
+	html_doc.search('.result-item').each do |item|
 		name = item.search(".result-item__product-name").first.text.strip
 		m = Medicine.find_by(name: name)
 		unless m.present?
