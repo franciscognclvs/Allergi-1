@@ -9,14 +9,7 @@
 				      <%= cl_image_tag appointment.user.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
 						<% end %>
 				      <div class="card-product-infos">
-				      <h5>Name: <%= appointment.user.name, user_path(appointment.user)  %></h5>
-				      <p>e-mail: <%= appointment.user.email %></p>
-				      <p>CPF: <%= appointment.user.cpf %></p>
-				      <p>Date of Birth: <%= appointment.user.birthdate %></p>
-				      <p>Weight: <%= appointment.user.weight %></p>
-				      <p>Phone: <%= appointment.user.phone %></p>
-				      <p>Address: <%= appointment.user.address %></p>
-				      <p>Allergies to: </p>
+				      <h5>Name: <%= appointment.user.name %></h5>
 				    </div>
 				</div>
 			<% end %>
