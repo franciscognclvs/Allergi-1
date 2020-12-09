@@ -2,6 +2,7 @@
 # Medicine.destroy_all
 # Substance.destroy_all
 
+
 text = "Lactulose ( 21 )
 Secnidazol ( 21 )
 Succinato de Metoprolol ( 21 )

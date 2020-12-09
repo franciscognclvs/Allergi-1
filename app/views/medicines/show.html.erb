@@ -19,16 +19,13 @@
          <ul>
          <% @allergies.each do |allergy| %>
             <% allergy.reactions.each do |reaction| %>
+
               <li>
                 <%= reaction.name %>
               </li>
             <% end %>
-          <% end %>
-         </ul>
-         <% else %>
-           <p>Você não tem alergia a este remédio!</p>
-        <% end %>
-      <% end %>
+          </ul>
+        <% end %>  
       </div>
     </div>
   </div>

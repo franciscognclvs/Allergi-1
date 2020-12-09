@@ -24,8 +24,10 @@ Rails.application.routes.draw do
   resources :allergies, only: :show do
     resources :allergies_reactions, only: :create
   end
+  resources :allergies, only: :index
   resources :substances
   resources :appointments
   resources :allergies_reactions
   resources :users, only: [:index, :show]
+  resources :active_problems, only: [:create, :destroy]
 end
