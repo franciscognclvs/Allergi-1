@@ -1,60 +1,60 @@
-// .container-medicines {
-//   background-color: #152f4f;
-//   margin-top: 30px;
-//   .show-medicine {
-//     background-color: #152f4f;
-//     h2 {
-//       color: white; 
-//       text-shadow: black 0.1em 0.1em 0.2em;
-//       font-size: 35px;
-//     }
-//     h3 {
-//       color: rgb(230, 107, 107); 
-//       text-shadow: black 0.1em 0.1em 0.2em;
-//       font-size: 31px;
-//       margin-top: -15px;
-//     }
-//     h4 {
-//       color: rgb(223, 215, 145);
-//       text-shadow: black 0.1em 0.1em 0.2em;
-//       font-size: 16px;
-//       margin-top: -8px;
-//       font-style: italic;
-//     }
-//     .p1 {
-//       font-size: 27px;
-//       color: rgb(255, 255, 255);
-//       text-shadow: black 0.1em 0.1em 0.2em;
-//       animation: p1 0.7s infinite;
-//       margin: 0 auto;
-//       display: table;
-//       margin-top: 50px;
-//       animation-direction: alternate;
-//       -webkit-animation-name: p1;
-//       animation-name: p1;
-//     }
-//     @-webkit-keyframes p1 {
-//       0% {
-//         -webkit-transform: scale(1);
-//         -webkit-filter: brightness(100%);
-//       }
-//       100% {
-//         -webkit-transform: scale(1.1);
-//         -webkit-filter: brightness(200%);
-//       }
-//     }
+.container-medicines {
+  background-color: #152f4f;
+  margin-top: 30px;
+  .show-medicine {
+    background-color: #152f4f;
+    h2 {
+      color: white; 
+      text-shadow: black 0.1em 0.1em 0.2em;
+      font-size: 35px;
+    }
+    h3 {
+      color: rgb(230, 107, 107); 
+      text-shadow: black 0.1em 0.1em 0.2em;
+      font-size: 31px;
+      margin-top: -15px;
+    }
+    h4 {
+      color: rgb(223, 215, 145);
+      text-shadow: black 0.1em 0.1em 0.2em;
+      font-size: 16px;
+      margin-top: -8px;
+      font-style: italic;
+    }
+    .p1 {
+      font-size: 27px;
+      color: rgb(255, 255, 255);
+      text-shadow: black 0.1em 0.1em 0.2em;
+      animation: p1 0.7s infinite;
+      margin: 0 auto;
+      display: table;
+      margin-top: 50px;
+      animation-direction: alternate;
+      -webkit-animation-name: p1;
+      animation-name: p1;
+    }
+    @-webkit-keyframes p1 {
+      0% {
+        -webkit-transform: scale(1);
+        -webkit-filter: brightness(100%);
+      }
+      100% {
+        -webkit-transform: scale(1.1);
+        -webkit-filter: brightness(200%);
+      }
+    }
     
-//     @keyframes p1 {
-//       0% {
-//         transform: scale(1);
-//         filter: brightness(100%);
-//       }
-//       100% {
-//         transform: scale(1.1);
-//         filter: brightness(100%);
-//       }
-//     }
-//     }
+    @keyframes p1 {
+      0% {
+        transform: scale(1);
+        filter: brightness(100%);
+      }
+      100% {
+        transform: scale(1.1);
+        filter: brightness(100%);
+      }
+    }
+    }
  
   
-// }
+}
