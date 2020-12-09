@@ -14,7 +14,7 @@ a:hover {
 	height: auto;
 }
 .modal-content {
-	background-color: red;
+	background-color: #c51212;
 	border: solid;
 	border-radius: 15px;
 	
@@ -29,4 +29,9 @@ a:hover {
 }
 .fa-clinic-medical {
 	color: rgb(23, 8, 77);
+}
+.search_medicine{
+	font-size: 40px;
+	padding-bottom: 40px;
+	padding-top: 15px;
 }
