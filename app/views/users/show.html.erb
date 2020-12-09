@@ -1,6 +1,6 @@
-<div class="container mt-1">
-  <div class="card-product">
-	  <img src="http://res.cloudinary.com/dyhjjms8y/image/upload/c_fill,g_face,h_55,q_80,r_max,w_55/c_scale,w_55/z8pgv00x1hw7h1kmyd68zhvzrpgp">
+<div class="container mt-4">
+  <div class="card-product col-sm ">
+    <%= cl_image_tag @user.photo.key %>
 		<div class="card-product-infos">
 		  <h5><%= @user.name %></h5>
 			<p>Email: <%= @user.email %></p>
@@ -11,27 +11,40 @@
 			<p>Address: <%= @user.address %></p>
 	  </div>
   </div>
-   
-  <br>
-  <br>
-  <div class="card-body-patients">
-    <div class="card-allergi" align="center">
-      <div class ="card-new mt-4">
-        <br>
-        <h4><strong>Allergies / Adverse Reaction</strong></h4>
-        <div class="allergies" align="center">
-          <% @user.allergies.each do |allergy| %>
-            <div class="allergy">
-
-              <br>
-              <% allergy.reactions.each do |reaction| %>
-                <%= reaction.name %>
-                <br>
-              <% end %>
-            </div>
+  <div class="row d-flex justify-content-center">
+    <div class="card-body-patients mt-4 col-sm mx-2">
+     <div class="card-allergi" align="center">
+        <div class ="card-new">
+          <br>
+          <h3><strong>Active Problems</strong></h3>
+          <% @active_problems.each do |active_problem|%>
+          <p><strong><%= active_problem.problem %></strong></p>
           <% end %>
+          <%= render "shared/problem", locals: {user: @user} %>
+        </div>
+      </div>
+    </div>
+    <div class="card-body-patients mt-4 col-sm mx-2">
+      <div class="card-allergi" align="center">
+        <div class ="card-new">
+          <br>
+          <h3><strong>Allergies / Adverse Reaction</strong></h3>
+          <div class="allergies" align="center">
+            <% @user.allergies.each do |allergy| %>
+              <div class="allergy">
+                <h4><strong><%= allergy.medicine.principle %></strong></h4>
+                <h5><%= allergy.medicine.name %></h5>
+                <p>Possíveis Reações:</p>
+                <% allergy.reactions.each do |reaction| %>
+                  <i class="fas fa-notes-medical"> <%= reaction.name %></i>
+                  <br>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

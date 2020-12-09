@@ -7,4 +7,6 @@ class Doctor < ApplicationRecord
   has_one_attached :photo
   has_many :users
   has_many :appointments
+  has_many :active_problems
+
 end
