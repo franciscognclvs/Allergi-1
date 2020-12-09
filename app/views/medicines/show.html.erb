@@ -10,6 +10,25 @@
       <h4 class="card-text"><%= @medicine.name %></h4>
       <br>
       <h6><%= @medicine.laboratory %></h6>
+      <% if current_user.allergies %>
+        <% medicines = [] %>
+        <% current_user.allergies.each do | allergy | %>
+          <% medicines.push(allergy.medicine_id) %>
+        <% end %>
+        <% if medicines.include?(params[:id].to_i) %> 
+         <p><strong>Você tem alergia a este remédio!</strong></p>
+         <p>Podem ocorrer as seguintes reações:</p>
+         <ul>
+          <% @reactions.each do |reaction| %>
+            <li>
+              <%= reaction.name %>
+            </li>
+          <% end %>
+         </ul>
+         <% else %>
+           <p>Você não tem alergia a este remédio!</p>
+        <% end %>
+      <% end %>
       </div>
     </div>
   </div>

@@ -12,6 +12,13 @@ class MedicinesController < ApplicationController
 
   def show
     @medicine = Medicine.find(params[:id])
+    @allergies = current_user.allergies
+    @allergies.each do |allergy|
+      @allergies_reactions = AllergiesReaction.where(allergy_id: allergy.id)
+    end
+    @allergies_reactions.each do |reaction|
+      @reactions = Reaction.where(id: reaction.reaction_id)
+    end
   end
 
   def create
