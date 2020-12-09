@@ -19,13 +19,16 @@
          <ul>
          <% @allergies.each do |allergy| %>
             <% allergy.reactions.each do |reaction| %>
-
               <li>
                 <%= reaction.name %>
               </li>
             <% end %>
-          </ul>
-        <% end %>  
+          <% end %>
+         </ul>
+         <% else %>
+           <p>Você não tem alergia a este remédio!</p>
+        <% end %>
+      <% end %>
       </div>
     </div>
   </div>
@@ -38,4 +41,3 @@
 
   <%= link_to 'I Took the medicine!', emergency_path(@medicine), class: "btn btn-danger mx-02 " %>
 </div>
-
