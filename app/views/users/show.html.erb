@@ -1,0 +1,37 @@
+<div class="container mt-1">
+  <div class="card-product">
+	  <img src="http://res.cloudinary.com/dyhjjms8y/image/upload/c_fill,g_face,h_55,q_80,r_max,w_55/c_scale,w_55/z8pgv00x1hw7h1kmyd68zhvzrpgp">
+		<div class="card-product-infos">
+		  <h5><%= @user.name %></h5>
+			<p>Email: <%= @user.email %></p>
+			<p>CPF: <%= @user.cpf %></p>
+			<p>Date of birth: <%= @user.birthdate %></p>
+			<p>Weight: <%= @user.weight %></p>
+			<p>Phone: <%= @user.phone %></p>
+			<p>Address: <%= @user.address %></p>
+	  </div>
+  </div>
+   
+  <br>
+  <br>
+  <div class="card-body-patients">
+    <div class="card-allergi" align="center">
+      <div class ="card-new mt-4">
+        <br>
+        <h4><strong>Allergies / Adverse Reaction</strong></h4>
+        <div class="allergies" align="center">
+          <% @user.allergies.each do |allergy| %>
+            <div class="allergy">
+
+              <br>
+              <% allergy.reactions.each do |reaction| %>
+                <%= reaction.name %>
+                <br>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

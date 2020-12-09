@@ -19,7 +19,7 @@ class AllergiesController < ApplicationController
     @allergy.medicine = Medicine.find(params[:medicine_id])
     @allergy.user = current_user
     if @allergy.save
-      redirect_to medicine_allergy_path(@allergy.medicine, @allergy)
+      redirect_to allergy_path(@allergy)
     else
       render :new
     end

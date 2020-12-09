@@ -19,10 +19,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :compound_mixes
   resources :medicines do
-    resources :allergies
+    resources :allergies, only: :create
+  end
+  resources :allergies, only: :show do
+    resources :allergies_reactions, only: :create
   end
   resources :substances
   resources :appointments
   resources :allergies_reactions
-  resources :users, only: :index
+  resources :users, only: [:index, :show]
 end
