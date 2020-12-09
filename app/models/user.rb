@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :appointments
   has_one :doctor, through: :appointments
+  has_many :active_problems
 end
