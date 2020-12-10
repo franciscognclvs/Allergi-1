@@ -8,21 +8,21 @@
     h6 {
       color: #152F4F; 
       font-weight: 700;
-      text-shadow: rgb(204, 204, 204) 0.1em 0.1em 0.1em;
+      text-shadow: rgb(194, 194, 194) 0.1em 0.1em 0.1em;
       text-align: center;
       font-size: 37px;
     }
     h3 {
       color: rgb(201, 2, 2); 
-      font-weight: 500;
-      text-shadow: rgb(211, 211, 211) 0.1em 0.1em 0.1em;
-      font-size: 31px;
+      font-weight: 600;
+      text-shadow: rgb(228, 228, 228) 0.1em 0.1em 0.1em;
+      font-size: 27px;
       margin-top: -5px;
     }
     h4 {
       color: rgb(111, 119, 2);
-      font-weight: 400;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 15px;
       margin-top: -3px;
       font-style: italic;
     }
@@ -62,7 +62,8 @@
       }
     }
     .p2 {
-      font-size: 22px;
+      font-size: 24px;
+      font-weight: 500;
       color: rgb(105, 95, 2);
       
       // text-shadow: black 0.1em 0.1em 0.2em;
@@ -72,7 +73,8 @@
      font-weight: 400;
      text-align: left;
      margin-left: 40px;
-     font-size: 24px;
+     font-size: 25px;
+     font-weight: 500;
     } 
     }
  
@@ -81,3 +83,4 @@
   margin-right: 30px;
   padding: 8px;
 }
+
