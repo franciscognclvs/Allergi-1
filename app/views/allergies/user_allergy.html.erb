@@ -1,0 +1,9 @@
+<div class="container my-5">
+	<% @allergies.each do |allergy| %>
+	<div class="card-product">
+	    <div class="card-product-infos">
+		    <h5><%= allergy.medicine.name %></h5>
+		</div>
+	</div>
+	<% end %>
+</div>

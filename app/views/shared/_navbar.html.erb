@@ -19,15 +19,12 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "User Page", pages_user_page_path, class: "dropdown-item" %>
-            <%= link_to "Allergies", allergies_path, class: "dropdown-item" %>
+            <%= link_to "Allergies",  user_allergy_path, class: "dropdown-item" %>
             <%= link_to "My Doctor", appointments_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% elsif doctor_signed_in? %>
-        <li class="nav-item active mx-2">
-          <%= link_to "Home", root_path, class: "btn btn-light" %>
-        </li>
         <li class="nav-item dropdown">
           <% if current_doctor.photo.attached? %>
           <%= cl_image_tag current_doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}], class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

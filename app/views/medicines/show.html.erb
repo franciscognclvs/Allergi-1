@@ -1,7 +1,7 @@
 <div class="container-medicines d-flex justify-content-center mt-5">
   <div class="card-princip show-medicine">
   <br>
-      <h2><%= @medicine.principle %> </h2>
+      <h6><%= @medicine.principle %> </h6>
     <div class="card-medicines">
       <% if @medicine.photo.attached? %>
         <%= cl_image_tag @medicine.photo.key %>
@@ -9,17 +9,18 @@
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
         <% if @reactions.empty? %> 
-          <p>Você não tem alergia a este remédio!</p>
+           <p>Você não tem alergia a este remédio!</p>
         <% else %>
-          <p><strong>Você tem alergia a este remédio!</strong></p>
-          <p>Podem ocorrer as seguintes reações:</p>
+          <p class="p1">You have allergy <i class="fas fa-allergies"></i></p>
+          <p class="p2">Main reactions:</p>
           <ul>
+            <div class="each-allergies">
             <% @reactions.each do |reaction| %>
               <li>
                 <%= reaction.name %>
               </li>
             <% end %>
-          </ul>
+            </div>
         <% end %>
       </div>
     </div>

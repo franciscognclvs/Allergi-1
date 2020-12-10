@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="card-product col-sm ">
-    <%= cl_image_tag @user.photo.key %>
+    <%= cl_image_tag @user.photo.key, transformation: [{width: 155, height: 155, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 155, crop: "scale"}] %>
 		<div class="card-product-infos">
 		  <h5><%= @user.name %></h5>
 			<p>Email: <%= @user.email %></p>
@@ -34,7 +34,7 @@
               <div class="allergy">
                 <h4><strong><%= allergy.medicine.principle %></strong></h4>
                 <h5><%= allergy.medicine.name %></h5>
-                <p>Possíveis Reações:</p>
+                <p>Possible Reactions:</p>
                 <% allergy.reactions.each do |reaction| %>
                  <%= reaction.name %></i>
                   <br>

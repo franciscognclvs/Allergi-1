@@ -24,23 +24,23 @@
 		<h2>My doctor:</h2>
 		<% if @appointments.present? %>
 			<% @appointments.each do |appointment| %>
-				  <div class="card-product">
-					  <% if appointment.doctor.photo.attached? %>
-
-				      <%= cl_image_tag appointment.doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill"}, {width: 55, crop: "scale"}] %>
-
-						<% end %>
-				      <div class="card-product-infos">
-				      <h5>Name: <%= appointment.doctor.name %></h5>
-				      <h5>Phone: <%= appointment.user.phone %></h5>
-				      <h5>EMERGENCY: <%= appointment.doctor.emergency_phone %></h5>
-				    </div>
+				<div class="card-product">
+				  <% if appointment.doctor.photo.attached? %>
+			      <%= cl_image_tag appointment.doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill"}, {width: 55, crop: "scale"}] %>
+				  <% end %>
+			      <div class="card-product-infos">
+			      <h5>Name: <%= link_to appointment.doctor.name, appointment_path(appointment) %></h5>
+			      <h5>Phone: <%= appointment.user.phone %></h5>
+			      <h5>EMERGENCY: <%= appointment.doctor.emergency_phone %></h5>
+				  </div>
 				</div>
 			<% end %>
 		<% else %>
-		<h1>You don`t have any doctor</h1>
+			<h1>You don`t have any doctor</h1>
+			<div class="container-medicine">
+				<p>Don`t forget that you can`t delete your doctor once added, please contact-us.</p>
+			</div>
+			<%= link_to 'Add one doctor', appointments_search_path, class: "btn btn-light" %>
 		<% end %>
-		<button type="button" style="text" class="btn btn-warning"><%= link_to 'Add one doctor', appointments_search_path %></button>
-
 	<% end %>
 </div>

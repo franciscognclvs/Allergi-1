@@ -1,5 +1,15 @@
 <div class="container">
   <div class="card-home mt-4">
-    <h6> Médico, pós graduado pela Pontifícia Universidade Católica de Campinas - PUC/CAMPINAS em 2004, Doutora em Nefrologia no grupo de Doenças Metabólicas Ósseas relacionadas a Doença Renal Crônica do Hospital das Clínicas da Faculdade de Medicina da USP em 2015. Vice Diretor e Clínica do Hospital Israelita Albert Einstein. <h6>
+    <div class="card-product">
+      <% if @appointment.doctor.photo.attached? %>
+        <%= cl_image_tag @appointment.doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill"}, {width: 55, crop: "scale"}] %>
+      <% end %>
+      <div class="card-product-infos">
+        <h5>Name: <%= @appointment.doctor.name %></h5>
+        <h5>Phone: <%= @appointment.user.phone %></h5>
+        <h5>EMERGENCY: <%= @appointment.doctor.emergency_phone %></h5>
+      </div>
+    </div>
+        <h6> Doctor, post graduated from the Pontifical Catholic University of Campinas - PUC/CAMPINAS in 2004, PhD in Nephrology in the group of Bone Metabolic Diseases related to Chronic Kidney Disease of the Hospital das Clínicas of the Faculty of Medicine of USP in 2015. Deputy Director and Clinic of the Hospital Israelita Albert Einstein. <h6>
   </div>
 </div>
