@@ -1,0 +1,27 @@
+<div class="container-medicines d-flex justify-content-center mt-2">
+  <div class="card-princip show-medicine">
+  <br>
+      <h2>Dipirona monoidratada </h2>
+    <div class="card-medicines" style="width: 19rem;">
+      <div class="card-body">
+      <h3>Dorflex</h3><h4>(Sanofi Medley)</h4>
+          <p><strong>Você tem alergia a este remédio!</strong></p>
+          <p>Podem ocorrer as seguintes reações:</p>
+          <ul>
+              <li>
+                Náusea
+              </li>
+              <li>
+                Vômito
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% @allergies.each do |allergy| %>
+<%= allergy.medicine.name %>
+<% end %>

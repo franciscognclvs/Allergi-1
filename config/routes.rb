@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   resources :allergies_reactions
   resources :users, only: [:index, :show]
   resources :active_problems, only: [:create, :destroy]
+  get "user_allergy", to: "allergies#user_allergy"
 end
