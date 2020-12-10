@@ -1,20 +1,21 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background-color: #152F4F;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 10px;
-  // margin-bottom: 20px;
-  margin: auto;
+  margin-bottom: 20px;
+  // margin: auto;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 100px;
   object-fit: cover;
-  margin-left: 10px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 50%;
 }
 
 .card-product h2 {
@@ -24,6 +25,7 @@
 }
 
 .card-product p {
+  color: white;
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -36,12 +38,34 @@
 }
 
 .card-body-patients {
-  background-color: white;
+  background-color: #bebebe;
   border-radius: 10px;
   height: 300px;
   overflow-y: scroll;
 }
 
+.card-body-patients h5 {
+  color:rgb(255, 136, 0);
+}
+
+.card-body-patients h4 {
+  color:red;
+}
+
+
 .card-allergi {
   border-radius: 10px;
+}
+
+.card-product h5 {
+  color: white;
+}
+
+.card-new {
+  background-color: #bebebe
+}
+
+.card-new p {
+  color: black;
+  opacity: .7;
 }
