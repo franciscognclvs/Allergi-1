@@ -36,7 +36,7 @@
                 <h5><%= allergy.medicine.name %></h5>
                 <p>Possíveis Reações:</p>
                 <% allergy.reactions.each do |reaction| %>
-                  <i class="fas fa-notes-medical"> <%= reaction.name %></i>
+                 <%= reaction.name %></i>
                   <br>
                 <% end %>
               </div>
