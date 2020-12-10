@@ -1,33 +1,37 @@
 .container-medicines {
-  background-color: #152f4f;
+  background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: black  0.1em 0.1em 0.4em;
+  box-shadow: black  0.1em 0.1em 0.1em;
   margin-bottom: 65px;
   .show-medicine {
-    background-color: #152f4f;
-    h2 {
-      color: white; 
-      text-shadow: black 0.1em 0.1em 0.2em;
-      font-size: 35px;
+    background-color: #ffffff;
+    h6 {
+      color: #152F4F; 
+      font-weight: 700;
+      text-shadow: rgb(194, 194, 194) 0.1em 0.1em 0.1em;
+      text-align: center;
+      font-size: 37px;
     }
     h3 {
-      color: rgb(230, 107, 107); 
-      text-shadow: black 0.1em 0.1em 0.2em;
-      font-size: 31px;
-      margin-top: -15px;
+      color: rgb(201, 2, 2); 
+      font-weight: 600;
+      text-shadow: rgb(228, 228, 228) 0.1em 0.1em 0.1em;
+      font-size: 27px;
+      margin-top: -5px;
     }
     h4 {
-      color: rgb(218, 207, 116);
-      text-shadow: black 0.1em 0.1em 0.2em;
-      font-size: 16px;
-      margin-top: -8px;
+      color: rgb(111, 119, 2);
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: -3px;
       font-style: italic;
     }
     .p1 {
       padding-bottom: 35px;
       font-size: 29px;
-      color: rgb(255, 255, 255);
-      text-shadow: black 0.1em 0.1em 0.2em;
+      color: #152F4F;
+      font-weight: 600;
+      text-shadow: rgb(148, 148, 148) 0.1em 0.1em 0.2em;
       animation: p1 0.7s infinite;
       margin: 0 auto;
       display: table;
@@ -58,16 +62,19 @@
       }
     }
     .p2 {
-      font-size: 22px;
-      color: rgb(218, 207, 116);
-      text-shadow: black 0.1em 0.1em 0.2em;
+      font-size: 24px;
+      font-weight: 500;
+      color: rgb(105, 95, 2);
+      
+      // text-shadow: black 0.1em 0.1em 0.2em;
     }
     .each-allergies {
-     color: rgb(230, 107, 107); 
-     text-shadow: black 0.1em 0.1em 0.2em;
+     color: rgb(201, 2, 2);
+     font-weight: 400;
      text-align: left;
      margin-left: 40px;
-     font-size: 24px;
+     font-size: 25px;
+     font-weight: 500;
     } 
     }
  

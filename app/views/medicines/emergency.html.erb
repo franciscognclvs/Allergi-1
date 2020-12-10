@@ -6,11 +6,11 @@
         <%= @medicine.principle %>
         <br>Possivel reação:<br>
         <ul>
-        <% @allergies.each do |allergy| %>
-          <% allergy.reactions.each do |reaction| %>         
-            <li><%= reaction.name %></li>
+          <% @reactions.each do |reaction| %>
+            <li>
+              <%= reaction.name %>
+            </li>
           <% end %>
-        <% end %>
         </ul>
         
 
