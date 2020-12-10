@@ -4,7 +4,9 @@
       <h6><%= @medicine.principle %> </h6>
     <div class="card-medicines">
       <% if @medicine.photo.attached? %>
-        <%= cl_image_tag @medicine.photo.key, :class => "img_medicine"%>
+        <div align="center">
+          <%= cl_image_tag @medicine.photo.key %>
+        </div>
       <% end %>
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
