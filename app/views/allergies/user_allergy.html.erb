@@ -1,7 +1,9 @@
-<div class="container-medicines d-flex justify-content-center mt-2">
-  <div class="card-princip show-medicine">
-    <% @allergies.each do |allergy| %>
-    <%= allergy.medicine.name %>
-    <% end %>
-  </div>
+<div class="container my-5">
+	<% @allergies.each do |allergy| %>
+	<div class="card-product">
+	    <div class="card-product-infos">
+		    <h5><%= allergy.medicine.name %></h5>
+		</div>
+	</div>
+	<% end %>
 </div>

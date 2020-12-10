@@ -1,15 +1,17 @@
-Doutores disponiveis:
-<% @doctors.each do |doctor| %>
-	<div class="card-product">
-		<% if doctor.photo.attached? %>
-	      <%= cl_image_tag doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
-			<% end %>
-	    <div class="card-product-infos">
-	      <h5><%= doctor.name %></h5>
-	      <h5>Phone: <%= doctor.phone %></h5>
-	      <p>Emergency-Phone: <%= doctor.emergency_phone %></p>
-	      <br>
-	      <%= link_to 'Choose doctor', appointments_path(id: doctor.id), method: :post, class: "btn btn-secondary" %>
-	    </div>
-	</div>
-<% end %>
+<div class="container">
+	<h2>Doutores disponiveis:</h2>
+	<% @doctors.each do |doctor| %>
+		<div class="card-product">
+			<% if doctor.photo.attached? %>
+		      <%= cl_image_tag doctor.photo.key, transformation: [{width: 55, height: 55, gravity: "face", radius: "max", crop: "fill", quality: 80}, {width: 55, crop: "scale"}] %>
+				<% end %>
+		    <div class="card-product-infos">
+		      <h5><%= doctor.name %></h5>
+		      <h5>Phone: <%= doctor.phone %></h5>
+		      <p>Emergency-Phone: <%= doctor.emergency_phone %></p>
+		      <br>
+		      <%= link_to 'Choose doctor', appointments_path(id: doctor.id), method: :post, class: "btn btn-secondary" %>
+		    </div>
+		</div>
+	<% end %>
+</div>
