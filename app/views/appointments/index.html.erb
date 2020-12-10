@@ -31,7 +31,7 @@
 
 						<% end %>
 				      <div class="card-product-infos">
-				      <h5>Name: <%= appointment.doctor.name %></h5>
+				      <h5>Name: <%= link_to appointment.doctor.name, appointment_path(appointment) %></h5>
 				      <h5>Phone: <%= appointment.user.phone %></h5>
 				      <h5>EMERGENCY: <%= appointment.doctor.emergency_phone %></h5>
 				    </div>

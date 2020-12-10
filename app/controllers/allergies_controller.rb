@@ -29,6 +29,10 @@ class AllergiesController < ApplicationController
   def destroy
   end
 
+  def user_allergy
+    @allergies = current_user.allergies
+  end
+
   private
 
   def allergy_params
