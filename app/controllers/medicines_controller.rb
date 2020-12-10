@@ -12,7 +12,7 @@ class MedicinesController < ApplicationController
   end
 
   def show
-    @medicine.reactions
+    @medicine
   end
 
   def create
