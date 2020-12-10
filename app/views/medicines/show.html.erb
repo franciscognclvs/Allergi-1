@@ -15,17 +15,12 @@
           <p>Podem ocorrer as seguintes reações:</p>
           <ul>
             <% @reactions.each do |reaction| %>
-
               <li>
                 <%= reaction.name %>
               </li>
             <% end %>
           <% end %>
          </div>
-         <% else %>
-           <p>Você não tem alergia a este remédio!</p>
-        <% end %>
-      <% end %>
       </div>
     </div>
   </div>
