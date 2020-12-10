@@ -4,12 +4,12 @@
       <h6><%= @medicine.principle %> </h6>
     <div class="card-medicines">
       <% if @medicine.photo.attached? %>
-        <%= cl_image_tag @medicine.photo.key %>
+        <%= cl_image_tag @medicine.photo.key, :class => "img_medicine"%>
       <% end %>
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
         <% if @reactions.empty? %> 
-           <p>Você não tem alergia a este remédio!</p>
+           <p class="p3">You are not allergic <i class="far fa-laugh-squint"></i></p>
         <% else %>
           <p class="p1">You have allergy <i class="fas fa-allergies"></i></p>
           <p class="p2">Main reactions:</p>
