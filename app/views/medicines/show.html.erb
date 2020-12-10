@@ -1,7 +1,7 @@
 <div class="container-medicines d-flex justify-content-center mt-5">
   <div class="card-princip show-medicine">
   <br>
-      <h2><%= @medicine.principle %> </h2>
+      <h6><%= @medicine.principle %> </h6>
     <div class="card-medicines">
       <% if @medicine.photo.attached? %>
         <%= cl_image_tag @medicine.photo.key %>
@@ -15,7 +15,6 @@
           <p>Podem ocorrer as seguintes reações:</p>
           <ul>
             <% @reactions.each do |reaction| %>
-
               <li>
                 <%= reaction.name %>
               </li>
