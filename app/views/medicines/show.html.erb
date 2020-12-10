@@ -14,7 +14,7 @@
           <p><strong>Você tem alergia a este remédio!</strong></p>
           <p>Podem ocorrer as seguintes reações:</p>
           <ul>
-            <% @medicine.reactions.each do |reaction| %>
+            <% @reactions.each do |reaction| %>
               <li>
                 <%= reaction.name %>
               </li>

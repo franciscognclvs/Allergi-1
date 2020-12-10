@@ -88,16 +88,16 @@ puts 'OK'
 
 puts 'Criando Reações Alergicas'
 sleep 1
-Reaction.create!(name:'Espirro')
-Reaction.create!(name:'Falta de ar')
-Reaction.create!(name:'Respiração ofegante')
-Reaction.create!(name:'Coriza')
-Reaction.create!(name:'Erupção cutânea')
-Reaction.create!(name:'Urticária')
-Reaction.create!(name:'Inchaço')
-Reaction.create!(name:'Coceira')
-Reaction.create!(name:'Náusea')
-Reaction.create!(name:'Vômito')
-Reaction.create!(name:'Cólica')
-Reaction.create!(name:'Diarreia')
+Reaction.create!(name:'Sneeze')
+Reaction.create!(name:'Shortness of breathe')
+Reaction.create!(name:'Panting')
+Reaction.create!(name:'Coryza')
+Reaction.create!(name:'Rash')
+Reaction.create!(name:'Hives')
+Reaction.create!(name:'Swelling')
+Reaction.create!(name:'Itch')
+Reaction.create!(name:'Nausea')
+Reaction.create!(name:'Vomit')
+Reaction.create!(name:'Colic')
+Reaction.create!(name:'Diarrhea')
 puts 'OK'
