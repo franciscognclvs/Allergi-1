@@ -8,7 +8,7 @@
       <% end %>
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
-        <% if @medicine.reactions.empty? %> 
+        <% if @reactions.empty? %> 
            <p>Você não tem alergia a este remédio!</p>
         <% else %>
           <p><strong>Você tem alergia a este remédio!</strong></p>

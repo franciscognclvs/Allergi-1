@@ -1,8 +1,21 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
 .footer{
   background: #152F4F;
   color: white; 
   text-shadow: rgb(39, 39, 39) 0.1em 0.1em 0.2em; 
   font-family: 'Helvetica Neue', sans-serif;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  /* Set the fixed height of the footer here */
   
   
   .links{
