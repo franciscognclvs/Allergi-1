@@ -1,21 +1,24 @@
 <div class="container-medicines d-flex justify-content-center mt-5">
   <div class="card-princip show-medicine">
   <br>
-      <h2><%= @medicine.principle %> </h2>
+      <h6><%= @medicine.principle %> </h6>
     <div class="card-medicines">
       <% if @medicine.photo.attached? %>
         <%= cl_image_tag @medicine.photo.key %>
       <% end %>
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
-        <% if @medicine.reactions.empty? %> 
-           <p>Você não tem alergia a este remédio!</p>
-        <% else %>
-          <p><strong>Você tem alergia a este remédio!</strong></p>
-          <p>Podem ocorrer as seguintes reações:</p>
-          <ul>
-            <% @reactions.each do |reaction| %>
-
+      <% if current_user.allergies %>
+        <% medicines = [] %>
+        <% current_user.allergies.each do | allergy | %>
+          <% medicines.push(allergy.medicine_id) %>
+        <% end %>
+        <% if medicines.include?(params[:id].to_i) %> 
+         <p class="p1">You have allergy <i class="fas fa-allergies"></i></p>
+         <p class="p2">Podem ocorrer as seguintes reações:</p>
+         <div class="each-allergies"> 
+         <% @allergies.each do |allergy| %>
+            <% allergy.reactions.each do |reaction| %>
               <li>
                 <%= reaction.name %>
               </li>
