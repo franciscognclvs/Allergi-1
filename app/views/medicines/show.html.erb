@@ -8,27 +8,19 @@
       <% end %>
       <div class="card-body">
       <h3><%= @medicine.name %></h3><h4>(<%= @medicine.laboratory %>)</h4>
-      <% if current_user.allergies %>
-        <% medicines = [] %>
-        <% current_user.allergies.each do | allergy | %>
-          <% medicines.push(allergy.medicine_id) %>
-        <% end %>
-        <% if medicines.include?(params[:id].to_i) %> 
-         <p class="p1">You have allergy <i class="fas fa-allergies"></i></p>
-         <p clas="p2">Podem ocorrer as seguintes reações:</p>
-         <ul>
-         <% @allergies.each do |allergy| %>
-            <% allergy.reactions.each do |reaction| %>
+        <% if @medicine.reactions.empty? %> 
+           <p>Você não tem alergia a este remédio!</p>
+        <% else %>
+          <p><strong>Você tem alergia a este remédio!</strong></p>
+          <p>Podem ocorrer as seguintes reações:</p>
+          <ul>
+            <% @medicine.reactions.each do |reaction| %>
               <li>
                 <%= reaction.name %>
               </li>
             <% end %>
-          <% end %>
-         </ul>
-         <% else %>
-           <p>Você não tem alergia a este remédio!</p>
+          </ul>
         <% end %>
-      <% end %>
       </div>
     </div>
   </div>
