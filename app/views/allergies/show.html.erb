@@ -1,9 +1,17 @@
 <h1>Allergies to <%= @allergy.medicine.name %></h1><br>
 <h4>Allergic Reactions</h4>
 <%= simple_form_for [@allergy, @allergies_reactions] do |f| %>
-  <%= f.collection_check_boxes :reaction_id, Reaction.all, :id, :name, :include_hidden => false  %>
-  <%# <%= f.input :allergy, as: :hidden, input_html:{value: @allergy.id}  %>
+  <div class="btn-group-toggle" data-toggle="buttons" role="group" aria-label="Basic checkbox toggle button group">
+    <%Reaction.all.each do |r| %>
+      <label class="btn btn-outline-primary" for="allergies_reaction_reaction_id_<%= r.id %>">
+        <input class="btn-check d-none" type="checkbox" value='<%= r.id %>' name="allergies_reaction[reaction_id][]" id="allergies_reaction_reaction_id_<%= r.id %>" ><%= r.name %>
+      </label>
+    <% end %>
+  </div>
+  
   <%= f.submit %>
 <% end %>
+
+
 
 
