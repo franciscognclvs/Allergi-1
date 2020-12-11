@@ -1,34 +1,11 @@
-<div class="container-medicines d-flex justify-content-center mt-5">
-	<h5><% @allergies.each do |allergy| %></h5>
-	<div class="card-princip show-medicine">
-	  <div class="card-product-infos-allergy">
-      <br>
-      <h5 class="card-allergy"><%= allergy.medicine.principle %> </h5>
-      <div class="card-medicines">
-        <% if allergy.medicine.photo.attached? %>
-          <%= cl_image_tag allergy.medicine.photo.key %>
-        <% end %>
-        <div class="card-body">
-          <h3><%= allergy.medicine.name %></h3><h4>(<%= allergy.medicine.laboratory %>)</h4>
-          <% if allergy.medicine.reactions.empty? %> 
-            <p>Você não tem alergia a este remédio!</p>
-          <% else %>
-            <p class="p2">Main reactions:</p>
-            <p>
-              <div class="each-allergies">
-                <% allergy.medicine.reactions.each do |reaction| %>
-                  <p>
-                    <%= reaction.name %>
-                  </p>
-                <% end %>
-              </div>
-            </p>
-          <% end %>
-        </div>
-      </div>
-		</div>
-	</div>
+<div class="container my-5">
+  <% @principles.each do |principle| %>
+	  <div class="card-product">
+	    <div class="card-product-infos">
+		    <h5><%= principle %></h5>
+				
+				<h6><%=  %></h6>
+		  </div>
+	  </div>
 	<% end %>
 </div>
-
-

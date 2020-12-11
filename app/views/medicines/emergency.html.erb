@@ -1,19 +1,19 @@
 <div class="container-1">
   <div class="container-2 pt-5">  
-
+    <% if @medicine.photo.attached? %>
+      <%= cl_image_tag @medicine.photo.key %>
+    <% end %>
     <h2> <%= @medicine.name %></h2><br>
-    <h2>Principio Ativo:<br>
-        <%= @medicine.principle %>
-        <br>Possivel reação:<br>
-        <ul>
-          <% @reactions.each do |reaction| %>
-            <li>
-              <%= reaction.name %>
-            </li>
-          <% end %>
-        </ul>
-        
-
+    <h2>Active Principle:<br>
+      <%= @medicine.principle %>
+      <br>Possible Reactions:<br>
+      <ul>
+        <% @reactions.each do |reaction| %>
+          <li>
+            <%= reaction.name %>
+          </li>
+        <% end %>
+      </ul>
     </h2>
   </div>
   <div class="container-3">
@@ -22,8 +22,8 @@
 
   </div>
   <div class="buttons"> 
-    <%= link_to "Emergência 192", "tel:192", class: "btn btn-outline-light btn-lg" %>
+    <%= link_to "Emergency 192", "tel:192", class: "btn btn-outline-light btn-lg" %>
     <% if @appointment.present? %>
-      <%= link_to "Contato Médico", "tel:#{@appointment.doctor.emergency_phone}", class: "btn btn-outline-light btn-lg" %>
+      <%= link_to "Doctor Emergency Phone", "tel:#{@appointment.doctor.emergency_phone}", class: "btn btn-outline-light btn-lg" %>
     <% end %>
   </div>

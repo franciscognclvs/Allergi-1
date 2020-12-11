@@ -22,6 +22,7 @@ class MedicinesController < ApplicationController
   end
 
   def emergency
+    @appointment = current_user.appointments.last
     @reactions = Medicine.where(principle: @medicine.principle).map { |medicine| medicine.allergies.where(user: current_user).map{ |u| u.reactions }}.flatten
   end
 
