@@ -1,17 +1,18 @@
 
-<h1>Allergies to <%= @allergy.medicine.name %></h1><br>
-<h4>Allergic Reactions</h4>
-<%= simple_form_for [@allergy, @allergies_reactions] do |f| %>
-  <div class="btn-group-toggle" data-toggle="buttons" role="group" aria-label="Basic checkbox toggle button group">
-    <%Reaction.all.each do |r| %>
-      <label class="btn btn-outline-primary" for="allergies_reaction_reaction_id_<%= r.id %>">
-        <input class="btn-check d-none" type="checkbox" value='<%= r.id %>' name="allergies_reaction[reaction_id][]" id="allergies_reaction_reaction_id_<%= r.id %>" ><%= r.name %>
-      </label>
-    <% end %>
-  </div>
-  
-  <%= f.submit %>
-<% end %>
+<h1>Allergy reactions to <%= @allergy.medicine.name %></h1><br>
+<div class='caixa'>
+  <%= simple_form_for [@allergy, @allergies_reactions] do |f| %>
+    <div class="btn-group-toggle reactions" data-toggle="buttons" role="group" aria-label="Basic checkbox toggle button group">
+      <%Reaction.all.each do |r| %>
+        <label class="btn btn-outline-primary" for="allergies_reaction_reaction_id_<%= r.id %>">
+          <input class="btn-check d-none" type="checkbox" value='<%= r.id %>' name="allergies_reaction[reaction_id][]" id="allergies_reaction_reaction_id_<%= r.id %>" ><%= r.name %>
+        </label>
+      <% end %>
+    </div>
+    <%= f.button :submit, 'Add reaction to allergy',  class: "btn-primary mt-3" %>
+    <%#= f.submit 'Add reaction to allergy' %>
+  <% end %>
+</div>
 
 
 
