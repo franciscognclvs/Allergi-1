@@ -30,8 +30,9 @@
 				  <% end %>
 			      <div class="card-product-infos">
 			      <h5>Name: <%= link_to appointment.doctor.name, appointment_path(appointment) %></h5>
-			      <h5>Phone: <%= appointment.user.phone %></h5>
+			      <h5>CRM: <%= appointment.doctor.crm %></h5>
 			      <h5>EMERGENCY: <%= appointment.doctor.emergency_phone %></h5>
+						<%= link_to "Contato Médico", "tel:#{appointment.doctor.emergency_phone}", class: "btn btn-outline-light btn-lg" %>
 				  </div>
 				</div>
 			<% end %>
