@@ -89,7 +89,7 @@
 puts 'Criando Reações Alergicas'
 sleep 1
 Reaction.create!(name:'Sneeze')
-Reaction.create!(name:'Shortness of breathe')
+Reaction.create!(name:'breatheless')
 Reaction.create!(name:'Panting')
 Reaction.create!(name:'Coryza')
 Reaction.create!(name:'Rash')

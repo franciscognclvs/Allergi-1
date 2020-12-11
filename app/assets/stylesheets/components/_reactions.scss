@@ -1,0 +1,20 @@
+.reactions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  width: 60%;
+  padding: 8px;
+}
+
+.caixa{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 600px) {
+  .reactions {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
