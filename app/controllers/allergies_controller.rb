@@ -30,7 +30,9 @@ class AllergiesController < ApplicationController
   end
 
   def user_allergy
-    @allergies = current_user.allergies
+    @principles = User.find(current_user.id).medicines.map { |medicine| medicine.principle }.uniq
+    # @medicine = User.find(current_user.id).medicines
+    # @reactions = Medicine.where(principle: @medicine.principle).map { |medicine| medicine.allergies.where(user: current_user).map{ |u| u.reactions }}.flatten
   end
 
   private
