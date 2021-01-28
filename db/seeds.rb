@@ -49,41 +49,41 @@
 # 		puts "#{s.name} #{m.name} created on db"
 # 	end
 # end
-# puts 'Criando Substances'
-# sleep 1
-# s1 = Substance.create!(name:'Dipirona monoidratada')
-# s2 = Substance.create!(name:'Paracetamol')
-# s3 = Substance.create!(name:'Ibuprofeno')
-# s4 = Substance.create!(name:'Acido Acetilsalicílico')
-# puts 'OK'
+puts 'Criando Substances'
+sleep 1
+s1 = Substance.create!(name:'Dipirona monoidratada')
+s2 = Substance.create!(name:'Paracetamol')
+s3 = Substance.create!(name:'Ibuprofeno')
+s4 = Substance.create!(name:'Acido Acetilsalicílico')
+puts 'OK'
 
-# puts 'Criando Medicines'
-# sleep 1
-# m1 = Medicine.create!(name: 'Novalgina', principle: 'Dipirona monoidratada', laboratory: 'Sanofi Medley')
-# m2 = Medicine.create!(name: 'Tylenol', principle: 'Paracetamol', laboratory:'Janssen-Cilag')
-# m3 = Medicine.create!(name: 'Advil', principle: 'Ibuprofeno', laboratory:'Wyeth/Pfizer')
-# m4 = Medicine.create!(name: 'Dorflex', principle: 'Dipirona monoidratada', laboratory:'Sanofi Medley')
-# m5 = Medicine.create!(name: 'Aspirina', principle: 'Acido Acetilsalicílico', laboratory: 'Bayer')
-# puts 'OK'
+puts 'Criando Medicines'
+sleep 1
+m1 = Medicine.create!(name: 'Novalgina', principle: 'Dipirona monoidratada', laboratory: 'Sanofi Medley')
+m2 = Medicine.create!(name: 'Tylenol', principle: 'Paracetamol', laboratory:'Janssen-Cilag')
+m3 = Medicine.create!(name: 'Advil', principle: 'Ibuprofeno', laboratory:'Wyeth/Pfizer')
+m4 = Medicine.create!(name: 'Dorflex', principle: 'Dipirona monoidratada', laboratory:'Sanofi Medley')
+m5 = Medicine.create!(name: 'Aspirina', principle: 'Acido Acetilsalicílico', laboratory: 'Bayer')
+puts 'OK'
 
-# puts 'Criando CompoundMix'
-# sleep 1
+puts 'Criando CompoundMix'
+sleep 1
 
-# CompoundMix.create!(substance: s1, medicine: m1)
-# CompoundMix.create!(substance: s1, medicine: m4)
-# CompoundMix.create!(substance: s2, medicine: m2)
-# CompoundMix.create!(substance: s3, medicine: m3)
-# CompoundMix.create!(substance: s4, medicine: m5)
-# puts 'OK'
+CompoundMix.create!(substance: s1, medicine: m1)
+CompoundMix.create!(substance: s1, medicine: m4)
+CompoundMix.create!(substance: s2, medicine: m2)
+CompoundMix.create!(substance: s3, medicine: m3)
+CompoundMix.create!(substance: s4, medicine: m5)
+puts 'OK'
 
-# puts 'Criando Doctor'
-# sleep 1
-# d1 = Doctor.create!(email:'123@doctor.com', password: '123456', name: 'Dr. Rogerio', phone: '11998989898', crm: '123456789', address: 'Rua ao lado da Jericó', emergency_phone: '11998989898')
-# puts 'OK'
-# puts 'Criando User'
-# sleep 1
-# User.create!(name:'Willian Arão', phone: '11990909090', cpf: '12312312312', address: 'Rua Jericó', weight: 99.5, email: '123@user.com', password: '123456')
-# puts 'OK'
+puts 'Criando Doctor'
+sleep 1
+d1 = Doctor.create!(email:'123@doctor.com', password: '123456', name: 'Dr. Rogerio', phone: '11998989898', crm: '123456789', address: 'Rua ao lado da Jericó', emergency_phone: '11998989898')
+puts 'OK'
+puts 'Criando User'
+sleep 1
+User.create!(name:'Willian Arão', phone: '11990909090', cpf: '12312312312', address: 'Rua Jericó', weight: 99.5, email: '123@user.com', password: '123456')
+puts 'OK'
 
 
 puts 'Criando Reações Alergicas'
