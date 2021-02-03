@@ -76,10 +76,10 @@ CompoundMix.create!(substance: s3, medicine: m3)
 CompoundMix.create!(substance: s4, medicine: m5)
 puts 'OK'
 
-puts 'Criando Doctor'
-sleep 1
-d1 = Doctor.create!(email:'123@doctor.com', password: '123456', name: 'Dr. Rogerio', phone: '11998989898', crm: '123456789', address: 'Rua ao lado da Jericó', emergency_phone: '11998989898')
-puts 'OK'
+# puts 'Criando Doctor'
+# sleep 1
+# d1 = Doctor.create!(email:'123@doctor.com', password: '123456', name: 'Dr. Rogerio', phone: '11998989898', crm: '123456789', address: 'Rua ao lado da Jericó', emergency_phone: '11998989898')
+# puts 'OK'
 puts 'Criando User'
 sleep 1
 User.create!(name:'Willian Arão', phone: '11990909090', cpf: '12312312312', address: 'Rua Jericó', weight: 99.5, email: '123@user.com', password: '123456')
